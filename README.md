@@ -1,151 +1,83 @@
-# Study Trackers
+# CWES Study Kit
 
-![Pick a cert. Get the kit.](assets/share/home-v5.png)
+![CWES Study Kit](assets/share/cwes-v4.png)
 
-Study trackers, prep notes for Obsidian, Notion and CherryTree, practice boxes and resources for Hack The Box certifications. Each cert gets four things: a day-by-day study plan you check off as you go, ready-made notes for Obsidian, Notion or CherryTree, a list of HTB Labs boxes to practice on, and a page with every study resource in one place.
+A day-by-day study tracker, ready-made prep notes (Obsidian, Notion, and CherryTree), curated HTB Labs practice boxes, and exam resources for the **Hack The Box Certified Web Exploitation Specialist (CWES)** certification.
 
-**Open the site: https://cnmoseman.github.io/htb-study-trackers/**
+**Open the site: https://nithin0x.github.io/htb-study-trackers/**
 
-## Not sure which cert?
+## What's included
 
-![The cert picker's results screen](assets/shots/picker-overview.webp)
+| Tool | What it gives you | Link |
+|---|---|---|
+| **Study tracker** | 20 modules, 279 sections, 5 timelines (30 to 150 days), daily notes, pace tracking, offline `.html` download | [Open tracker](https://nithin0x.github.io/htb-study-trackers/cwes/tracker/) |
+| **Prep notes** | 54 pre-built notes: 20 module notes, 10 blank methodology phases, exam workspace, 6 templates | [Choose app](https://nithin0x.github.io/htb-study-trackers/cwes/notes/) |
+| **Practice boxes** | 38 curated HTB Labs machines & web challenges ordered from warm-ups to hard chains | [Open boxes](https://nithin0x.github.io/htb-study-trackers/cwes/practice/) |
+| **Resources & costs** | 98 links across 9 sections, 5 favorites, 29 pass tips, interactive HTB cost calculator | [Open resources](https://nithin0x.github.io/htb-study-trackers/cwes/resources/) |
 
-The [cert picker](https://cnmoseman.github.io/htb-study-trackers/picker/) asks five quick questions, one at a time: where you are now, what you want to do, how comfortable you are with code, how many hours a week you have, and your budget. A follow-up appears only when it matters, like which certs you already hold or whether you've tested web apps before.
+## Study tracker
 
-- You get the cert that fits you best and why, plus a second card: what to take after it, what to start with first, or a runner-up.
-- If you're new to security, it starts you on the CJCA.
-- It knows the main certs from other vendors. OSCP or PNPT count as CPTS-level, BSCP as CWES-level and GCIH as CDSA-level, so it points you past what they already cover. If knowledge certs like Security+ or CISSP are all you have, it starts you on the CJCA to prove the skills hands-on.
-- Your result shows the exam length, which subscription tier the modules need, the tracker timeline that fits your hours, and roughly what it costs at that pace.
-- The **Start the 160-day CPTS plan** button (the numbers match your result) opens the tracker on that timeline. Tap any answer on the results screen to change it, and **Copy my results** gives you a summary to paste anywhere.
-- The bottom of the page compares all nine certs side by side.
+![CWES study tracker](assets/shots/cwes-tracker.webp)
 
-## The certs
-
-Each cert's page has its tracker, its prep notes, its practice boxes and its resources.
-
-| Cert | Name | Path | Timelines | Notes | Practice | Resources |
-|---|---|---|---|---|---|---|
-| [CJCA](https://cnmoseman.github.io/htb-study-trackers/cjca/) | Certified Junior Cybersecurity Associate | 20 modules, 5-day exam | 25 to 130 days | [Notes](https://cnmoseman.github.io/htb-study-trackers/cjca/notes/) | [Boxes](https://cnmoseman.github.io/htb-study-trackers/cjca/practice/) | [Links](https://cnmoseman.github.io/htb-study-trackers/cjca/resources/) |
-| [CPTS](https://cnmoseman.github.io/htb-study-trackers/cpts/) | Certified Penetration Testing Specialist | 28 modules, 10-day exam | 65 to 315 days | [Notes](https://cnmoseman.github.io/htb-study-trackers/cpts/notes/) | [Boxes](https://cnmoseman.github.io/htb-study-trackers/cpts/practice/) | [Links](https://cnmoseman.github.io/htb-study-trackers/cpts/resources/) |
-| [CWES](https://cnmoseman.github.io/htb-study-trackers/cwes/) | Certified Web Exploitation Specialist | 20 modules, 7-day exam | 30 to 150 days | [Notes](https://cnmoseman.github.io/htb-study-trackers/cwes/notes/) | [Boxes](https://cnmoseman.github.io/htb-study-trackers/cwes/practice/) | [Links](https://cnmoseman.github.io/htb-study-trackers/cwes/resources/) |
-| [CDSA](https://cnmoseman.github.io/htb-study-trackers/cdsa/) | Certified Defensive Security Analyst | 15 modules, 7-day exam | 30 to 155 days | [Notes](https://cnmoseman.github.io/htb-study-trackers/cdsa/notes/) | [Sherlocks](https://cnmoseman.github.io/htb-study-trackers/cdsa/practice/) | [Links](https://cnmoseman.github.io/htb-study-trackers/cdsa/resources/) |
-| [CWEE](https://cnmoseman.github.io/htb-study-trackers/cwee/) | Certified Web Exploitation Expert | 15 modules, 10-day exam | 35 to 180 days | [Notes](https://cnmoseman.github.io/htb-study-trackers/cwee/notes/) | [Boxes](https://cnmoseman.github.io/htb-study-trackers/cwee/practice/) | [Links](https://cnmoseman.github.io/htb-study-trackers/cwee/resources/) |
-| [CAPE](https://cnmoseman.github.io/htb-study-trackers/cape/) | Certified Active Directory Pentesting Expert | 15 modules, 10-day exam | 45 to 225 days | [Notes](https://cnmoseman.github.io/htb-study-trackers/cape/notes/) | [Boxes](https://cnmoseman.github.io/htb-study-trackers/cape/practice/) | [Links](https://cnmoseman.github.io/htb-study-trackers/cape/resources/) |
-| [CWPE](https://cnmoseman.github.io/htb-study-trackers/cwpe/) | Certified Wi-Fi Pentesting Expert | 10 modules, 7-day exam | 25 to 120 days | [Notes](https://cnmoseman.github.io/htb-study-trackers/cwpe/notes/) | [Boxes](https://cnmoseman.github.io/htb-study-trackers/cwpe/practice/) | [Links](https://cnmoseman.github.io/htb-study-trackers/cwpe/resources/) |
-| [COAE](https://cnmoseman.github.io/htb-study-trackers/coae/) | Certified Offensive AI Expert | 12 modules, 7-day exam | 30 to 140 days | [Notes](https://cnmoseman.github.io/htb-study-trackers/coae/notes/) | [Boxes](https://cnmoseman.github.io/htb-study-trackers/coae/practice/) | [Links](https://cnmoseman.github.io/htb-study-trackers/coae/resources/) |
-| [CDEP](https://cnmoseman.github.io/htb-study-trackers/cdep/) | Certified Detection Engineering Principal | 13 modules, 10-day exam | 90 to 270 days | [Notes](https://cnmoseman.github.io/htb-study-trackers/cdep/notes/) | [Sherlocks](https://cnmoseman.github.io/htb-study-trackers/cdep/practice/) | [Links](https://cnmoseman.github.io/htb-study-trackers/cdep/resources/) |
-
-## Study trackers
-
-![The CPTS study tracker](assets/shots/tracker-overview.png)
-
-The trackers all work the same way, whichever cert you pick.
-
-- Each one splits the cert's HTB Academy job-role path into days and follows the modules in order.
-- You choose one of five timelines, for about 50, 40, 30, 20, or 10 hours of study a week. The hours come from HTB's own module estimates, and your checkmarks carry over if you switch. If you come from the cert picker, the tracker opens on the timeline that fits your hours, unless you've already checked off a task in it.
-- The dashboard shows your overall progress, your streak, which phase you're in, and whether you're ahead of or behind pace.
-- Every day has a notes box for commands, credentials, and anything you want to come back to.
-- The Resources tab links the official cert and path pages, every module in order, video reviews, exam write-ups from people who passed, reporting templates, and the main tools.
-- The What It Costs tab adds up the Academy plan and exam voucher for your timeline, and compares every plan side by side.
-- If you've already finished some modules on HTB Academy, tick them under **Already done some modules?** and the tracker checks off their study tasks.
-- Export and Import let you back up your progress or move it to another device.
-- The site's home page shows a progress ring on each tracker you've started, so you can pick up where you left off.
-- Each tracker is a single HTML file with its fonts and images built in, so it works offline.
+- Splits the **Web Penetration Tester** HTB Academy job-role path (20 modules, 279 sections) into daily tasks in study order.
+- Choose from five timelines: **30, 40, 50, 75, or 150 days** (~50, 38, 30, 20, or 10 hours/week). Your checkmarks and notes carry over whenever you switch timelines.
+- Dashboard tracks overall completion, streak, current phase, estimated finish date, and ahead/behind pace.
+- Includes **Already done some modules?** (with one-click shared-module shortcuts for CPTS, CJCA, and CDSA).
+- **Export backup** and **Import** save and restore your progress (including solved practice boxes) as a JSON file.
+- Single self-contained HTML file that also works offline via **Download offline .html**.
 
 ## Prep notes
 
-![The CPTS notes open in Obsidian, CherryTree and Notion](assets/shots/cpts-notes.webp)
+![CWES prep notes in Obsidian, CherryTree, and Notion](assets/shots/cwes-notes.webp)
 
-Every cert also has prep notes in three apps. Pick the one you use: an Obsidian vault you download as a zip, a Notion template you duplicate into your workspace, or a CherryTree file (.ctd). All three hold the same notes.
+Available in three formats with the exact same structure:
 
-- A note for each module in the cert's path, in course order, split into one part per Academy section.
-- An exam-day workspace (targets, credentials, findings, flags and a daily log) laid out to match the cert's report.
-- Blank methodology phases you rename and fill in as your own workflow.
-- Links to tested community cheat sheets for the cert, plus the cert's SysReptor report template.
-- The Obsidian vault only uses built-in features, so you don't need any plugins. You can browse every vault in [vaults/](vaults/) before downloading.
-- All three work offline once you have your copy. Notion works offline in its desktop or mobile app, after you mark the pages **Available offline**.
+- **Obsidian** (`.zip` vault, no community plugins needed — browse in [vaults/cwes-prep-vault/](vaults/cwes-prep-vault/))
+- **Notion** (duplicate template into your workspace)
+- **CherryTree** (single `.ctd` file, preinstalled on Kali)
+
+Each format includes:
+- 20 module notes split by Academy section
+- 10 blank numbered methodology phases to build your personal web testing playbook
+- An exam-day workspace (scope & rules, apps, findings, flags, and a 7-day log) aligned with the CWES report
+- Links to tested CWES community cheat sheets, starter `ffuf` and `GraphQL` notes, and the SysReptor CWES report template
 
 ## Practice boxes
 
-![The CPTS practice boxes](assets/shots/practice-overview.webp)
+![CWES practice boxes](assets/shots/cwes-practice.webp)
 
-Every cert also has a list of HTB Labs boxes to practice on, picked for that exam and grouped from easiest to hardest.
+- 38 HTB Labs machines and web challenges ordered from single-bug warm-ups to chained hard boxes.
+- Tagged with the CWES Academy modules they practice, filterable by module or remaining status, with links to IppSec videos and 0xdf write-ups.
+- Synced with the tracker's **Practice Boxes** tab and included in JSON backups.
+- Optional extra practice — everything tested on the exam is covered in HTB Academy's Web Penetration Tester path.
 
-- Each box is tagged with the Academy modules it practices, so you can find boxes for a topic you just finished.
-- Each one links its walkthroughs (IppSec videos, 0xdf write-ups) and says who recommended it: HTB's prep track for the cert, prep playlists, or exam reviews from people who passed.
-- You can filter by module, or show only what's left to do.
-- The same list is a tab in the tracker, and on the site the two share progress. The tracker's Export backup includes it.
-- The CDSA and CDEP lists are Sherlocks (investigation challenges) instead of machines. HTB hasn't recommended anything for the CDEP yet, so that list is my best guess, and the page says so.
-- Boxes are optional. Everything on the exam is in the Academy path. They're for sharpening your methodology and practicing reports.
+## Resources & cost calculator
 
-## Resources
+![CWES resources page](assets/shots/cwes-resources.webp)
 
-![The CPTS resources page](assets/shots/resources-overview.webp)
-
-Every cert also has a Resources page with every study resource in one place: the same links as the tracker's Resources tab, on their own page.
-
-- **Favorites** is my short list for the cert, one pick for each part of your prep.
-- **All Resources** has every link, grouped into sections. You can search them, filter by type (official, video, GitHub, web, community), and read the exam tips grouped by the person who gave them.
-- **What It Costs** is the same cost breakdown as the tracker's tab.
-
-## How to use
-
-Open the [site](https://cnmoseman.github.io/htb-study-trackers/) and pick your cert. Not sure which one? Take the [cert picker](https://cnmoseman.github.io/htb-study-trackers/picker/) first. Each cert's page has the tracker, the prep notes, the practice boxes and the resources.
-
-### Study tracker
-
-1. Click **Open tracker**, or **Download .html** to keep a copy that runs offline in any browser. The site and a downloaded copy keep separate progress, so pick one and stick with it.
-2. Set your start date and pick the timeline that matches the hours you have each week.
-3. Check off tasks as you finish them. A day is done when all of its tasks are.
-4. Use **Export backup** now and then to save your progress. **Import** puts it back, on the same device or a new one.
-
-### Prep notes
-
-1. On your cert's page, click **Choose your app** to open its Notes page.
-2. For Obsidian, install [Obsidian](https://obsidian.md) (free), click **Download .zip** and unzip it. Some unzip tools add an extra folder around it. The one you want is `<CERT>-Prep-Vault`, with `Home.md` inside. Then choose **Open folder as vault** and pick that folder. If you already have a vault open, you'll find this option in the vault switcher.
-3. For Notion, click **Duplicate to Notion**, then **Duplicate** at the top right, and pick your workspace. You'll need a free [Notion](https://www.notion.com) account.
-4. For CherryTree, install [CherryTree](https://www.giuspen.net/cherrytree/) (free, and already on Kali), click **Download .ctd**, then open it with **File › Open**.
-5. Start at the top page (**Home** in Obsidian). Rename the methodology phases to fit how you work, and fill in each module's note as you finish it.
-
-### Practice boxes
-
-1. On your cert's page, click **Open practice boxes**, or use the **Practice Boxes** tab in the tracker.
-2. Start with the first group. Open a box to see the modules it practices and its walkthroughs.
-3. Tick each box off when you solve it. Try it before you read the walkthrough.
-4. Write a short mock report for the boxes you finish, in SysReptor or your notes.
-
-### Resources
-
-1. On your cert's page, click **Open resources**, or use the **Resources** tab in the tracker.
-2. Start with **Favorites**. Switch to **All Resources** to search or browse every section.
-3. Check **What It Costs** before you buy a plan.
+- **Favorites**: 5 curated picks covering each stage of CWES prep.
+- **All Resources**: 98 links grouped into 9 sections with live search (`/`), type filters (Official, Video, GitHub, Web, Community), and 29 exam tips grouped by reviewer.
+- **What It Costs**: interactive comparison of Student, Silver Monthly, Silver Annual, Gold Annual, and optional HTB Labs VIP+ / HTB PRO plans across all five timelines.
 
 ## FAQ
 
-https://cnmoseman.github.io/htb-study-trackers/faq/
+Read the beginner guide and FAQ at **https://nithin0x.github.io/htb-study-trackers/faq/**.
 
 ## Where your progress lives
 
-Your progress is saved in your browser, separately for each tracker, and it never leaves it. There's no account. Progress doesn't sync between devices, so use Export and Import to move it. The cert picker also keeps your answers in your browser, and once you've finished it, it reopens on your results. It has nothing to export.
+Progress is stored locally in your browser's `localStorage` and never leaves your device. There is no account and no tracking. Use **Export backup** regularly to keep a copy or move progress between browsers/devices.
 
-## Hosted or downloaded?
+Note that the hosted site and a downloaded local `.html` copy keep separate browser storage — pick one or transfer between them via Export/Import.
 
-Using a tracker on the site is the easy way to start, and most updates won't touch your progress. Fixes to wording, resources, hours, or timelines keep your checkmarks where they are. A bigger change, like adding or reordering days or tasks, can shift saved progress onto the wrong items, though. If that happens, the tracker shows a "Plan updated" banner the next time you open it, so you know to look over your recent days. If you want a copy that never changes under you, download the HTML file and run it locally. Either way, export a backup now and then.
+## Feedback & contributions
 
-## Practice labs and paid content
-
-The practice boxes, and some tracker resources, point you to HTB Labs. Retired machines, challenges and Sherlocks usually need a VIP+ subscription, and Pro Labs need HTB PRO. Every practice box, and every box, challenge, or lab a tracker names, says whether it's Free, VIP+, or HTB PRO. HTB sometimes moves retired boxes into the free rotation, so check the Labs page too.
-
-## Suggest a resource
-
-Found a write-up, video, or practice box that helped you, or a box that belongs on a cert's list? [Suggest it here](https://github.com/cnmoseman/htb-study-trackers/issues/new?template=suggest-resource.yml). Spotted a wrong module, a dead link or an odd cert picker result? [Report a problem](https://github.com/cnmoseman/htb-study-trackers/issues/new?template=report-problem.yml). I read every submission before anything goes into a tracker, the prep notes or a practice list.
+- Found a write-up, video, cheat sheet, or practice box that helped with CWES? [Suggest a resource](https://github.com/nithin0x/htb-study-trackers/issues/new?template=suggest-resource.yml)
+- Spotted a broken link, wrong module, or layout bug? [Report a problem](https://github.com/nithin0x/htb-study-trackers/issues/new?template=report-problem.yml)
 
 ## Credits
 
-This project started from [mattrfield's coae-study-tracker](https://github.com/mattrfield/coae-study-tracker). These are independent study aids, not affiliated with or endorsed by Hack The Box.
+Forked and tailored for CWES from [cnmoseman's htb-study-trackers](https://github.com/cnmoseman/htb-study-trackers), which originally started from [mattrfield's coae-study-tracker](https://github.com/mattrfield/coae-study-tracker). This is an independent study aid, not affiliated with or endorsed by Hack The Box.
 
 ## License
 
-The trackers are MIT licensed. See [LICENSE](LICENSE). The code builds on mattrfield's coae-study-tracker, so the original copyright notice is kept.
-
-Each tracker embeds two fonts, Chakra Petch and IBM Plex Mono. Both are under the SIL Open Font License 1.1, and their license files are in [LICENSES/](LICENSES/).
+MIT licensed — see [LICENSE](LICENSE). Embedded fonts (`IBM Plex Mono` / `Chakra Petch` license notices) are under the SIL Open Font License 1.1 in [LICENSES/](LICENSES/).

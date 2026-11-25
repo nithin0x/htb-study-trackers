@@ -17,7 +17,7 @@ Four parts:
 - **[[00 - Attack Flow (MOC)]]**: your methodology, as numbered blank phases that you name and fill in your own way.
 - **[[00 - Module Index (MOC)]]**: your notes, one per Academy module, in course order. Your methodology links back to these.
 - **[[00 - Exam (MOC)]]**: your exam workspace, with apps, findings, flags and a log for each day, laid out like the report.
-- **[CWES Study Tracker](https://cnmoseman.github.io/htb-study-trackers/cwes/tracker/)**: the day-by-day study plan for this cert. Check off tasks there as you go.
+- **[CWES Study Tracker](https://nithin0x.github.io/htb-study-trackers/cwes/tracker/)**: the day-by-day study plan for this cert. Check off tasks there as you go.
 
 > [!warning] Read this first
 > Enumerate every application fully before you try to exploit it, and write up each finding the moment you confirm it. Cap each vuln test at ~30 minutes, then move on.
@@ -47,4 +47,4 @@ Get tested commands from these as you go:
 - Reporting: [SysReptor HTB-CWES template](https://docs.sysreptor.com/assets/reports/HTB-CWES-Report.pdf) + [Documentation & Reporting module](https://academy.hackthebox.com/course/preview/documentation--reporting) + [[M20 - Bug Bounty Hunting Process]]
 
 ---
-<span style="color: var(--text-faint)">Made by</span> [cnmoseman](https://github.com/cnmoseman) · [All HTB Study Trackers](https://cnmoseman.github.io/htb-study-trackers/) · [Report a problem](https://github.com/cnmoseman/htb-study-trackers/issues/new?template=report-problem.yml&cert=CWES&where=Prep+notes&title=%5BProblem%5D+%5BCWES%5D+)
+<span style="color: var(--text-faint)">CWES Study Kit:</span> [Hub](https://nithin0x.github.io/htb-study-trackers/) · [Study Tracker](https://nithin0x.github.io/htb-study-trackers/cwes/tracker/) · [Report a problem](https://github.com/nithin0x/htb-study-trackers/issues/new?template=report-problem.yml&where=Prep+notes&title=%5BProblem%5D+%5BCWES%5D+)

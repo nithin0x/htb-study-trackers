@@ -3,149 +3,435 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Study Trackers</title>
+<title>CWES Study Kit · HTB Certified Web Exploitation Specialist</title>
+<meta name="description" content="Day-by-day study tracker, prep notes for Obsidian, Notion and CherryTree, curated HTB Labs practice boxes, and resources for the HTB CWES certification.">
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-<meta name="theme-color" content="#9fef00">
+<meta name="theme-color" content="#0b0d14">
+<link rel="canonical" href="https://nithin0x.github.io/htb-study-trackers/">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://cnmoseman.github.io/htb-study-trackers/">
-<meta property="og:url" content="https://cnmoseman.github.io/htb-study-trackers/">
-<meta property="og:title" content="Study Trackers: Pick a cert. Get the kit.">
-<meta property="og:description" content="Study trackers, prep notes for Obsidian, Notion and CherryTree, practice boxes and resources for Hack The Box certs. Each cert gets a day-by-day plan, ready-made notes for the app you use, a list of HTB Labs boxes to practice on and every study resource in one place.">
-<meta property="og:image" content="https://cnmoseman.github.io/htb-study-trackers/assets/share/home-v5.png">
+<meta property="og:url" content="https://nithin0x.github.io/htb-study-trackers/">
+<meta property="og:title" content="CWES Study Kit">
+<meta property="og:description" content="Day-by-day study tracker, prep notes for Obsidian, Notion and CherryTree, curated HTB Labs practice boxes, and resources for the HTB CWES certification.">
+<meta property="og:image" content="https://nithin0x.github.io/htb-study-trackers/assets/share/cwes-v4.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Pick a cert. Get the kit. Study trackers, prep notes, practice boxes and resources for HTB certifications, shown with their badges.">
+<meta property="og:image:alt" content="CWES Study Kit card with the CWES badge">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Day-by-day study trackers, ready-made prep notes for Obsidian, Notion and CherryTree, practice box lists and resource pages for Hack The Box certifications.">
-<meta name="google-site-verification" content="vymrIim2LdAK-OY06AMeya8dTX4Ngd60is9Ue69RExs">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@400..700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#141d2b;--panel:#1a2332;--line:#243044;--text:#eef1f8;--muted:#a4b1cd;--dim:#7c8aa5;--green:#9fef00;--ink:#0d1420}
-  *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--text);font-family:"Saira",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--muted)}a:hover{color:var(--green)}
-  /* fixed banner height, shared with the cert pages (build_hubs.py): keep both at 360px */
-  .hero{background:var(--green);color:var(--ink);padding:22px 40px 40px;min-height:360px;display:flex;flex-direction:column}
-  .hero .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font:600 12px "IBM Plex Mono",monospace;letter-spacing:.08em;margin-bottom:48px}
-  .hero h1{font:700 clamp(44px,7.5vw,76px)/.95 "Chakra Petch",sans-serif;letter-spacing:-.045em;margin:auto 0 0;max-width:900px}
-  .hero p{font:400 17px/1.5 "Chakra Petch",sans-serif;margin:28px 0 0;max-width:560px}
-  .wrap{padding:36px 40px 0}
-  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:14px;margin-bottom:-14px}
-  /* each tile's rows (badge, code, name, level, progress, offer) line up across its grid row */
-  .tile{--acc:var(--green);position:relative;overflow:hidden;padding:20px 18px 18px;margin-bottom:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-rows:subgrid;grid-row:span 6;align-items:center;text-align:center;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
-  .tile .open{position:absolute;inset:0;z-index:1;border-radius:14px}
-  .tile img{border-radius:50%;box-shadow:0 0 0 6px var(--bg),0 0 0 7px var(--line);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease;background:var(--bg)}
-  .tile>div{display:contents}
-  .tile .code{font:700 22px "IBM Plex Mono",monospace;color:var(--acc);letter-spacing:.02em;margin-top:14px}
-  .tile .name{font:500 13px/1.35 "Chakra Petch",sans-serif;color:var(--text);margin-top:4px}
-  .tile .offer{grid-row:6;margin-top:12px;padding-top:11px;border-top:1px solid var(--line);font:600 11px "IBM Plex Mono",monospace;letter-spacing:.06em;color:var(--muted)}
-  .tile .offer span{color:var(--acc)}
-  .tile .offer .o{font-style:normal;white-space:nowrap}  /* wrap between items, never after a + */
-  @media (hover:hover){.tile:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:0 12px 32px rgba(0,0,0,.45)}
-  .tile:hover img{transform:scale(1.06);box-shadow:0 0 0 6px var(--bg),0 0 0 8px var(--acc),0 0 28px var(--acc)}}
-  .tile .bd{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;justify-self:center}
-  .tile .bd.on{background:conic-gradient(var(--acc) calc(var(--p)*1%),var(--line) 0)}
-  .tile .prog{position:relative;z-index:2;font:600 12px "IBM Plex Mono",monospace;letter-spacing:.06em;color:var(--acc);margin-top:8px;white-space:nowrap;text-decoration:none}
-  .tile .prog:hover span{color:var(--text)}
-  .tile .prog span{color:var(--muted)}
-  .tile .lv{display:flex;justify-content:center;align-items:flex-end;gap:2px;margin-top:8px;font:600 10.5px/11px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--muted)}
-  .tile .lv i{width:3px;height:5px;border-radius:1px;background:#3a4a66}
-  .tile .lv i:nth-child(2){height:8px}.tile .lv i:nth-child(3){height:11px;margin-right:5px}
-  .tile .lv.l1 i:first-child,.tile .lv.l2 i:nth-child(-n+2),.tile .lv.l3 i{background:var(--acc)}
-  .tile:has(a:focus-visible){border-color:var(--acc)}
-  footer{margin-top:clamp(44px,3.5vw,72px);padding:24px 0;border-top:1px solid var(--line);font:500 clamp(12px,.85vw,16px) "Saira",sans-serif;color:var(--dim);text-align:center}
-  @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid .tile:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 7px)}}  /* odd last tile: centered */
-  @media (max-width:560px){.tile .prog{font-size:11px;letter-spacing:.02em}.hero,.wrap{padding-left:20px;padding-right:20px}.hero .bar{font-size:11px;letter-spacing:.04em;margin-bottom:32px}}
-  @media (max-width:340px){.hero{min-height:380px}}  /* tiny phones: the copy wraps more; cert pages match */
-  @media (prefers-reduced-motion:reduce){.tile,.tile img{transition:none}}
-  /* how to use: one card per tool */
-  .hw{margin-top:clamp(40px,3vw,60px)}
-  .hw h2{font:600 clamp(14px,1.1vw,21px) "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--green);margin:0 0 16px}
-  .hcs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-  .hc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px;display:flex;flex-direction:column}
-  .hc .k{font:600 clamp(12px,.8vw,15px) "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--green)}
-  .hc h3{font:600 clamp(19px,1.3vw,24px) "Chakra Petch",sans-serif;margin:4px 0 12px}
-  .hc ol{list-style:none;counter-reset:s;margin:0 0 14px;padding:0;font:500 clamp(14px,1vw,18px)/1.6 "Saira",sans-serif;color:var(--muted)}
-  .hc li{counter-increment:s;position:relative;padding-left:1.6em}
-  .hc li::before{content:counter(s) ".";position:absolute;left:0;font-family:"IBM Plex Mono",monospace;color:var(--green)}
-  .hc p{margin:auto 0 0;padding-top:12px;border-top:1px solid var(--line);font:500 clamp(13px,.9vw,16px)/1.5 "Saira",sans-serif;color:var(--dim)}
-  .help{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
-  .help a{display:flex;flex-direction:column;padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:14px;text-decoration:none;transition:border-color .2s ease}
-  .help a:hover,.help a:focus-visible{border-color:var(--green)}
-  .help .k{font:600 clamp(12px,.8vw,15px) "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--green)}
-  .help strong{font:600 clamp(18px,1.2vw,22px) "Chakra Petch",sans-serif;color:var(--text);margin:4px 0 6px}
-  .help .d{font:500 clamp(14px,1vw,17px)/1.5 "Saira",sans-serif;color:var(--muted);margin-bottom:12px}
-  .help .go{margin-top:auto;font:600 clamp(14px,1vw,17px) "Saira",sans-serif;color:var(--green)}
-  @media (max-width:1200px){.hcs{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  @media (max-width:900px){.hcs{grid-template-columns:1fr}}
-  @media (max-width:1100px){.help{grid-template-columns:1fr 1fr}.help a:first-child{grid-column:1/-1}}
-  @media (max-width:700px){.help{grid-template-columns:1fr}}
-</style>
-<script>
-  /* page-view counter (GoatCounter, no cookies); live site only, never in downloaded copies */
-  if (location.hostname === "cnmoseman.github.io") {
-    var gc = document.createElement("script");
-    gc.async = true; gc.src = "https://cnmoseman.github.io/htb-study-trackers/assets/js/count.js";
-    gc.dataset.goatcounter = "https://cnmoseman.goatcounter.com/count";
-    document.head.appendChild(gc);
+  :root{
+    --bg-deep:#07080d;
+    --bg:#0b0d14;
+    --surface:#11141c;
+    --raised:#1a1e28;
+    --raised-hover:#222734;
+    --line:rgba(238,240,245,.08);
+    --line-strong:rgba(238,240,245,.16);
+    --text:#eef0f5;
+    --secondary:#a3a9b8;
+    --muted:#848c9f;
+    --acc:#ed635e;
+    --acc-dim:rgba(237,99,94,.12);
+    --acc-ink:#07080d;
+    --ok:#4cc38a;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --sans:"IBM Plex Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   }
-</script>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);font:400 15px/22px var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit}
+  :focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:6px}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+
+  /* Navigation */
+  .nav-bar{border-bottom:1px solid var(--line);background:var(--bg)}
+  .nav-in{max-width:1280px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:inline-flex;align-items:center;gap:12px;font:500 16px/1 var(--sans);color:var(--text);white-space:nowrap}
+  .brand img{width:28px;height:28px;border-radius:50%;display:block;border:1px solid var(--line)}
+  .nav-links{display:flex;align-items:center;gap:8px}
+  .nav-links a,.nav-text-btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 12px;border-radius:8px;font:400 14px/1 var(--sans);color:var(--secondary);background:none;border:0;cursor:pointer;transition:color 150ms var(--ease),background-color 150ms var(--ease)}
+  .nav-links a:hover,.nav-text-btn:hover{color:var(--text);background:var(--raised)}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;background:var(--text);color:var(--bg-deep);font:500 14px/1 var(--sans);white-space:nowrap;transition:background-color 150ms var(--ease),transform 120ms var(--ease)}
+  .nav-cta:hover{background:#fff}
+  .nav-cta:active{transform:scale(.98)}
+  .menu-btn{display:none;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:var(--raised);color:var(--text);cursor:pointer}
+  .mobile-menu{display:none;border-bottom:1px solid var(--line);background:var(--surface);padding:12px 20px 16px}
+  .mobile-menu.open{display:grid;gap:4px}
+  .mobile-menu a,.mobile-menu button{display:flex;align-items:center;justify-content:space-between;height:40px;padding:0 12px;border-radius:8px;color:var(--secondary);background:none;border:0;text-align:left;cursor:pointer;font-size:14px}
+  .mobile-menu a:hover,.mobile-menu button:hover{background:var(--raised);color:var(--text)}
+
+  /* Hero */
+  .hero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  .sig{display:inline-flex;align-items:center;gap:8px;font:400 13px/20px var(--mono);color:var(--secondary);margin:0 0 16px;font-variant-numeric:tabular-nums}
+  .sig-dot{width:6px;height:6px;border-radius:50%;background:var(--acc);flex:none}
+  .hero h1{font:500 clamp(36px,4.5vw,56px)/1.06 var(--sans);letter-spacing:-.03em;margin:0;color:var(--text);max-width:14ch}
+  .hero-sub{font:400 18px/28px var(--sans);color:var(--secondary);margin:20px 0 0;max-width:34rem}
+  .hero-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn-pri{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:8px;background:var(--text);color:var(--bg-deep);font:500 14px/1 var(--sans);transition:background-color 150ms var(--ease),transform 120ms var(--ease)}
+  .btn-pri:hover{background:#fff}
+  .btn-pri:active{transform:scale(.98)}
+  .btn-sec{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:8px;background:var(--raised);border:1px solid var(--line);color:var(--text);font:500 14px/1 var(--sans);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);transition:border-color 150ms var(--ease),background-color 150ms var(--ease),transform 120ms var(--ease)}
+  .btn-sec:hover{border-color:var(--line-strong);background:var(--raised-hover)}
+  .btn-sec:active{transform:scale(.98)}
+
+  /* Coded product preview (Hero moment) */
+  .preview{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:16px}
+  .pv-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .pv-title{display:flex;align-items:center;gap:12px;min-width:0}
+  .pv-badge{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);flex:none}
+  .pv-title strong{display:block;font:500 15px/20px var(--sans);color:var(--text)}
+  .pv-title span{display:block;font:400 12px/16px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+  .pv-pct{font:500 20px/24px var(--mono);color:var(--acc);font-variant-numeric:tabular-nums}
+  .pv-bars{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:end;height:56px;padding:12px;background:var(--bg-deep);border:1px solid var(--line);border-radius:10px}
+  .pv-bar{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:4px}
+  .pv-bar i{display:block;width:100%;border-radius:3px;background:var(--raised)}
+  .pv-bar.now i{background:var(--acc)}
+  .pv-tasks{display:grid;gap:8px}
+  .pv-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;background:var(--bg-deep);border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:18px}
+  .pv-row-l{display:flex;align-items:center;gap:8px;min-width:0;color:var(--secondary)}
+  .pv-row-l span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .pv-chk{width:14px;height:14px;border-radius:4px;border:1px solid var(--line-strong);flex:none;display:grid;place-items:center}
+  .pv-chk.on{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+  .pv-row-r{font:400 12px/16px var(--mono);color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .pv-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;font:400 12px/16px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+
+  /* Kit sections (varied grid) */
+  .sec{padding:48px 0}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+  .sec-head h2{font:500 24px/28px var(--sans);margin:0;color:var(--text)}
+  .sec-head p{font:400 14px/20px var(--sans);color:var(--muted);margin:0}
+  .kit-grid{display:grid;gap:16px}
+  .kit-row{display:grid;gap:16px}
+  .kit-row.a{grid-template-columns:1.35fr 1fr}
+  .kit-row.b{grid-template-columns:1fr 1.35fr}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px;transition:border-color 150ms var(--ease)}
+  .card:hover{border-color:var(--line-strong)}
+  .card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .card-k{display:inline-flex;align-items:center;gap:8px;font:400 12px/16px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+  .card-k svg{color:var(--muted)}
+  .card-meta{font:400 12px/16px var(--mono);color:var(--acc);font-variant-numeric:tabular-nums}
+  .card h3{font:500 20px/24px var(--sans);margin:0;color:var(--text)}
+  .card p{font:400 14px/22px var(--secondary);margin:0;max-width:52ch}
+  .card-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;font:400 13px/20px var(--secondary)}
+  .card-list li{display:flex;align-items:baseline;gap:8px}
+  .card-list li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--muted);flex:none;position:relative;top:-2px}
+  .card-wells{display:flex;flex-wrap:wrap;gap:8px}
+  .well{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:var(--bg-deep);border:1px solid var(--line);font:400 12px/16px var(--mono);color:var(--secondary);font-variant-numeric:tabular-nums}
+  .card-acts{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:8px}
+  .btn-sm-pri{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;background:var(--acc);color:var(--acc-ink);font:500 13px/1 var(--sans);transition:opacity 150ms var(--ease),transform 120ms var(--ease)}
+  .btn-sm-pri:hover{opacity:.92}
+  .btn-sm-pri:active{transform:scale(.98)}
+  .btn-sm-sec{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;background:var(--raised);border:1px solid var(--line);color:var(--text);font:400 13px/1 var(--sans);transition:border-color 150ms var(--ease),background-color 150ms var(--ease)}
+  .btn-sm-sec:hover{border-color:var(--line-strong);background:var(--raised-hover)}
+
+  /* Workflow band */
+  .flow{border-top:1px solid var(--line);padding:40px 0 48px}
+  .flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .step-n{font:400 12px/16px var(--mono);color:var(--muted);margin-bottom:8px;font-variant-numeric:tabular-nums}
+  .step h3{font:500 16px/22px var(--sans);margin:0 0 6px;color:var(--text)}
+  .step p{font:400 13px/20px var(--secondary);margin:0}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:24px 0 32px;font:400 13px/20px var(--sans);color:var(--muted)}
+  .foot-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+  .foot-links{display:flex;flex-wrap:wrap;gap:16px}
+  .foot-links a{color:var(--secondary);transition:color 150ms var(--ease)}
+  .foot-links a:hover{color:var(--text)}
+
+  /* Icon sizing */
+  .ic{width:16px;height:16px;flex:none;display:inline-block}
+
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .kit-row.a,.kit-row.b{grid-template-columns:1fr}
+    .flow-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:720px){
+    .wrap,.nav-in{padding-left:20px;padding-right:20px}
+    .nav-links{display:none}
+    .menu-btn{display:inline-flex}
+    .hero{padding:40px 0}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
+  <nav class="nav-bar" aria-label="Primary">
+    <div class="nav-in">
+      <a class="brand" href="./">
+        <img src="assets/badges/cwes.png" alt="CWES emblem" width="28" height="28">
+        <span>CWES Study Kit</span>
+      </a>
+      <div class="nav-links">
+        <a href="./cwes/tracker/">Tracker</a>
+        <a href="./cwes/notes/">Notes</a>
+        <a href="./cwes/practice/">Practice</a>
+        <a href="./cwes/resources/">Resources</a>
+        <a href="./faq/">FAQ</a>
+        <button type="button" class="nav-text-btn" id="passedBtn">I passed</button>
+        <a class="nav-cta" href="./cwes/tracker/">Open tracker</a>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="./cwes/tracker/">Study tracker</a>
+      <a href="./cwes/notes/">Prep notes</a>
+      <a href="./cwes/practice/">Practice boxes</a>
+      <a href="./cwes/resources/">Resources</a>
+      <a href="./faq/">FAQ</a>
+      <button type="button" id="passedBtnMob">I passed</button>
+    </div>
+  </nav>
+
   <header class="hero">
-    <div class="bar"><span>STUDY TRACKERS</span><span>9 HTB CERTIFICATIONS · TRACKERS, NOTES, BOXES &amp; RESOURCES</span></div>
-    <h1>Pick a cert.<br>Get the kit.</h1>
-    <p>Each cert comes with four things: a day-by-day study tracker, ready-made prep notes for Obsidian, Notion or CherryTree, a list of practice boxes from HTB Labs, and a page with every study resource for it. Choose a cert to get all four.</p>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="sig"><span class="sig-dot" aria-hidden="true"></span>HTB CWES · 20 modules · 279 sections · 7-day exam</p>
+          <h1>Structured prep for the HTB CWES exam</h1>
+          <p class="hero-sub">A day-by-day study schedule, pre-built notes for Obsidian, Notion and CherryTree, curated HTB Labs boxes, and exam resources in one kit.</p>
+          <div class="hero-acts">
+            <a class="btn-pri" id="heroOpen" href="./cwes/tracker/">
+              <span>Open study tracker</span>
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn-sec" href="./cwes/tracker/index.html" download="cwes-study-tracker.html">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              <span>Download offline .html</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="preview" aria-label="CWES Study Tracker preview">
+          <div class="pv-top">
+            <div class="pv-title">
+              <img class="pv-badge" src="assets/badges/cwes.png" alt="" width="36" height="36">
+              <div>
+                <strong>Web Penetration Tester path</strong>
+                <span id="pvSub">30-day schedule · ~50h/week · Browser storage</span>
+              </div>
+            </div>
+            <div class="pv-pct" id="pvPct">0%</div>
+          </div>
+          <div class="pv-bars" aria-hidden="true">
+            <div class="pv-bar now"><i style="height:76%"></i></div>
+            <div class="pv-bar"><i style="height:48%"></i></div>
+            <div class="pv-bar"><i style="height:64%"></i></div>
+            <div class="pv-bar"><i style="height:56%"></i></div>
+            <div class="pv-bar"><i style="height:40%"></i></div>
+          </div>
+          <div class="pv-tasks">
+            <div class="pv-row">
+              <div class="pv-row-l"><span class="pv-chk on" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>M01 · Web Requests &amp; HTTP anatomy</span></div>
+              <span class="pv-row-r">Day 01</span>
+            </div>
+            <div class="pv-row">
+              <div class="pv-row-l"><span class="pv-chk" aria-hidden="true"></span><span>M08 · SQL Injection Fundamentals</span></div>
+              <span class="pv-row-r">Day 09</span>
+            </div>
+            <div class="pv-row">
+              <div class="pv-row-l"><span class="pv-chk" aria-hidden="true"></span><span>M12 · Server-side Attacks (SSRF &amp; SSTI)</span></div>
+              <span class="pv-row-r">Day 14</span>
+            </div>
+          </div>
+          <div class="pv-foot">
+            <span id="pvBoxes">38 practice boxes queued</span>
+            <span>98 resources · 3 note apps</span>
+          </div>
+        </aside>
+      </div>
+    </div>
   </header>
 
   <main class="wrap">
-    <div class="grid">
-      <div class="tile" style="--acc:#2f95ff" data-tasks="213" data-key="cjca_tracker_v2"><a class="open" href="./cjca/" aria-label="Open CJCA study kit"></a><span class="bd"><img src="assets/badges/cjca.png" alt="CJCA badge" width="96" height="96" loading="lazy"></span><div><div class="code">CJCA</div><div class="name">Certified Junior Cybersecurity Associate</div><div class="lv l1"><i></i><i></i><i></i>EASY</div><div class="offer"><i class="o">Tracker</i> <i class="o"><span>+</span> Notes</i> <i class="o"><span>+</span> Boxes</i> <i class="o"><span>+</span> Resources</i></div></div></div>
-      <div class="tile" style="--acc:#a34ff2" data-tasks="444" data-key="cpts_tracker_v2"><a class="open" href="./cpts/" aria-label="Open CPTS study kit"></a><span class="bd"><img src="assets/badges/cpts.png" alt="CPTS badge" width="96" height="96" loading="lazy"></span><div><div class="code">CPTS</div><div class="name">Certified Penetration Testing Specialist</div><div class="lv l2"><i></i><i></i><i></i>MEDIUM</div><div class="offer"><i class="o">Tracker</i> <i class="o"><span>+</span> Notes</i> <i class="o"><span>+</span> Boxes</i> <i class="o"><span>+</span> Resources</i></div></div></div>
-      <div class="tile" style="--acc:#ed635e" data-tasks="231" data-key="cwes_tracker_v2"><a class="open" href="./cwes/" aria-label="Open CWES study kit"></a><span class="bd"><img src="assets/badges/cwes.png" alt="CWES badge" width="96" height="96" loading="lazy"></span><div><div class="code">CWES</div><div class="name">Certified Web Exploitation Specialist</div><div class="lv l2"><i></i><i></i><i></i>MEDIUM</div><div class="offer"><i class="o">Tracker</i> <i class="o"><span>+</span> Notes</i> <i class="o"><span>+</span> Boxes</i> <i class="o"><span>+</span> Resources</i></div></div></div>
-      <div class="tile" style="--acc:#00eafc" data-tasks="212" data-key="cdsa_tracker_v2"><a class="open" href="./cdsa/" aria-label="Open CDSA study kit"></a><span class="bd"><img src="assets/badges/cdsa.png" alt="CDSA badge" width="96" height="96" loading="lazy"></span><div><div class="code">CDSA</div><div class="name">Certified Defensive Security Analyst</div><div class="lv l2"><i></i><i></i><i></i>MEDIUM</div><div class="offer"><i class="o">Tracker</i> <i class="o"><span>+</span> Notes</i> <i class="o"><span>+</span> Boxes</i> <i class="o"><span>+</span> Resources</i></div></div></div>
-      <div class="tile" style="--acc:#fcc000" data-tasks="237" data-key="cwee_tracker_v2"><a class="open" href="./cwee/" aria-label="Open CWEE study kit"></a><span class="bd"><img src="assets/badges/cwee.png" alt="CWEE badge" width="96" height="96" loading="lazy"></span><div><div class="code">CWEE</div><div class="name">Certified Web Exploitation Expert</div><div class="lv l3"><i></i><i></i><i></i>HARD</div><div class="offer"><i class="o">Tracker</i> <i class="o"><span>+</span> Notes</i> <i class="o"><span>+</span> Boxes</i> <i class="o"><span>+</span> Resources</i></div></div></div>
-      <div class="tile" style="--acc:#e436b4" data-tasks="290" data-key="cape_tracker_v2"><a class="open" href="./cape/" aria-label="Open CAPE study kit"></a><span class="bd"><img src="assets/badges/cape.png" alt="CAPE badge" width="96" height="96" loading="lazy"></span><div><div class="code">CAPE</div><div class="name">Certified Active Directory Pentesting Expert</div><div class="lv l3"><i></i><i></i><i></i>HARD</div><div class="offer"><i class="o">Tracker</i> <i class="o"><span>+</span> Notes</i> <i class="o"><span>+</span> Boxes</i> <i class="o"><span>+</span> Resources</i></div></div></div>
-      <div class="tile" style="--acc:#f05a1e" data-tasks="163" data-key="cwpe_tracker_v2"><a class="open" href="./cwpe/" aria-label="Open CWPE study kit"></a><span class="bd"><img src="assets/badges/cwpe.png" alt="CWPE badge" width="96" height="96" loading="lazy"></span><div><div class="code">CWPE</div><div class="name">Certified Wi-Fi Pentesting Expert</div><div class="lv l3"><i></i><i></i><i></i>HARD</div><div class="offer"><i class="o">Tracker</i> <i class="o"><span>+</span> Notes</i> <i class="o"><span>+</span> Boxes</i> <i class="o"><span>+</span> Resources</i></div></div></div>
-      <div class="tile" style="--acc:#9d94ea" data-tasks="190" data-key="coae_tracker_v2"><a class="open" href="./coae/" aria-label="Open COAE study kit"></a><span class="bd"><img src="assets/badges/coae.png" alt="COAE badge" width="96" height="96" loading="lazy"></span><div><div class="code">COAE</div><div class="name">Certified Offensive AI Expert</div><div class="lv l3"><i></i><i></i><i></i>HARD</div><div class="offer"><i class="o">Tracker</i> <i class="o"><span>+</span> Notes</i> <i class="o"><span>+</span> Boxes</i> <i class="o"><span>+</span> Resources</i></div></div></div>
-      <div class="tile" style="--acc:#00eafc" data-tasks="324" data-key="cdep_tracker_v2"><a class="open" href="./cdep/" aria-label="Open CDEP study kit"></a><span class="bd"><img src="assets/badges/cdep.png" alt="CDEP badge" width="96" height="96" loading="lazy"></span><div><div class="code">CDEP</div><div class="name">Certified Detection Engineering Principal</div><div class="lv l3"><i></i><i></i><i></i>HARD</div><div class="offer"><i class="o">Tracker</i> <i class="o"><span>+</span> Notes</i> <i class="o"><span>+</span> Boxes</i> <i class="o"><span>+</span> Resources</i></div></div></div>
-    </div>
-
-    <section class="hw">
-      <h2>HOW TO USE</h2>
-      <div class="hcs">
-        <div class="hc"><span class="k">0x01</span><h3>Study Tracker</h3><ol><li>Open your cert's tracker.</li><li>Set a start date and a timeline.</li><li>Tick tasks off. Export a backup now and then.</li></ol><p>Use it here, or download the .html to run offline. The two keep separate progress.</p></div>
-        <div class="hc"><span class="k">0x02</span><h3>Prep Notes</h3><ol><li>Open your cert's notes page.</li><li>Pick Obsidian, Notion or CherryTree.</li><li>Download the file, or duplicate the Notion template.</li></ol><p>Free in all three apps. Once you have your copy, it's yours to edit.</p></div>
-        <div class="hc"><span class="k">0x03</span><h3>Practice Boxes</h3><ol><li>Open your cert's practice boxes.</li><li>Work from the easiest group down.</li><li>Tick each box off and write a mock report.</li></ol><p>Also a tab in the tracker. On the site, both share your progress.</p></div>
-        <div class="hc"><span class="k">0x04</span><h3>Resources</h3><ol><li>Open your cert's resources.</li><li>Start with Favorites, one pick for each part of your prep.</li><li>Search the full list or filter by videos, GitHub or write-ups.</li></ol><p>The same links as the tracker's Resources tab, plus what the cert costs.</p></div>
+    <section class="sec">
+      <div class="sec-head">
+        <h2>Inside the kit</h2>
+        <p>Four tools that share your CWES curriculum and progress</p>
       </div>
-      <div class="help">
-        <a href="./picker/"><span class="k">CERT PICKER</span><strong>Not sure which cert?</strong><span class="d">Answer five quick questions and get the cert that fits you, a study plan for your hours and what it costs.</span><span class="go">Find my cert &rarr;</span></a>
-        <a href="./faq/"><span class="k">FAQ</span><strong>New to Hack The Box?</strong><span class="d">HTB terms, setting up your machine, notes and report writing, in plain answers.</span><span class="go">Read the FAQ &rarr;</span></a>
-        <a href="./faq/#website-or-download"><span class="k">FAQ</span><strong>Website or download?</strong><span class="d">Use the tools on this site or keep an offline copy. Here's what changes and how your progress moves.</span><span class="go">Find out &rarr;</span></a>
+      <div class="kit-grid">
+        <div class="kit-row a">
+          <article class="card">
+            <div class="card-top">
+              <span class="card-k">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                <span>01 · Plan and track</span>
+              </span>
+              <span class="card-meta" id="cardTrackerStat">231 tasks</span>
+            </div>
+            <h3>Study tracker</h3>
+            <p>Every CWES module in study order, split into daily tasks with notes, pace tracking, and timeline switching that keeps your checkmarks.</p>
+            <div class="card-wells">
+              <span class="well">30-day</span>
+              <span class="well">40-day</span>
+              <span class="well">50-day</span>
+              <span class="well">75-day</span>
+              <span class="well">150-day</span>
+            </div>
+            <div class="card-acts">
+              <a class="btn-sm-pri" id="cardOpenTracker" href="./cwes/tracker/">Open tracker</a>
+              <a class="btn-sm-sec" href="./cwes/tracker/index.html" download="cwes-study-tracker.html">Download .html</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <span class="card-k">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+                <span>02 · Take notes</span>
+              </span>
+              <span class="card-meta">54 notes</span>
+            </div>
+            <h3>Prep notes</h3>
+            <p>Course notes for all 20 modules, 10 blank methodology phases, and an exam workspace aligned with the CWES report.</p>
+            <div class="card-wells">
+              <span class="well">Obsidian .zip</span>
+              <span class="well">Notion template</span>
+              <span class="well">CherryTree .ctd</span>
+            </div>
+            <div class="card-acts">
+              <a class="btn-sm-sec" href="./cwes/notes/">Choose your app</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="kit-row b">
+          <article class="card">
+            <div class="card-top">
+              <span class="card-k">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg>
+                <span>03 · Practice</span>
+              </span>
+              <span class="card-meta" id="cardBoxStat">38 boxes</span>
+            </div>
+            <h3>Practice boxes</h3>
+            <p>HTB Labs machines and web challenges ordered from single-bug warm-ups to multi-step chains, tagged by module with walkthroughs.</p>
+            <ul class="card-list">
+              <li>Synced with the tracker's Practice boxes tab</li>
+              <li>Filterable by Academy module or remaining items</li>
+            </ul>
+            <div class="card-acts">
+              <a class="btn-sm-sec" href="./cwes/practice/">Open practice boxes</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <span class="card-k">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                <span>04 · Reference</span>
+              </span>
+              <span class="card-meta">98 links</span>
+            </div>
+            <h3>Resources and cost calculator</h3>
+            <p>Official modules, exam reviews, cheat sheets, SysReptor reporting templates, 29 pass tips, and a plan-by-plan CWES cost breakdown.</p>
+            <div class="card-wells">
+              <span class="well">Favorites</span>
+              <span class="well">9 sections</span>
+              <span class="well">29 exam tips</span>
+              <span class="well">Plan cost comparison</span>
+            </div>
+            <div class="card-acts">
+              <a class="btn-sm-sec" href="./cwes/resources/">Open resources</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <footer>Independent study aids, not affiliated with or endorsed by Hack The Box · <a href="./picker/">Cert picker</a> · <a href="./faq/">FAQ</a> · <a href="https://github.com/cnmoseman/htb-study-trackers/issues/new?template=suggest-resource.yml&amp;cert=Not+cert-specific&amp;where=Not+sure&amp;title=%5BResource%5D+">Suggest a resource</a> · <a href="https://github.com/cnmoseman/htb-study-trackers/issues/new?template=report-problem.yml&amp;cert=Not+cert-specific&amp;where=Landing+page&amp;title=%5BProblem%5D+">Report a problem</a></footer>
+    <section class="flow" aria-label="Workflow">
+      <div class="sec-head">
+        <h2>How it fits together</h2>
+        <p>Everything runs locally in your browser with JSON backup</p>
+      </div>
+      <div class="flow-grid">
+        <div class="step">
+          <div class="step-n">Step 1</div>
+          <h3>Pick a pace</h3>
+          <p>Choose a 30 to 150-day timeline in the tracker and set your start date. Switch timelines later without losing checked tasks</p>
+        </div>
+        <div class="step">
+          <div class="step-n">Step 2</div>
+          <h3>Build your notes</h3>
+          <p>Download the Obsidian vault or CherryTree file, or duplicate the Notion template, and fill in methodology phases as you go</p>
+        </div>
+        <div class="step">
+          <div class="step-n">Step 3</div>
+          <h3>Drill boxes and reporting</h3>
+          <p>Work through the curated practice boxes by module, write mock reports in SysReptor, and export a JSON backup periodically</p>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="wrap foot-in">
+      <span>Independent study aid, not affiliated with or endorsed by Hack The Box</span>
+      <div class="foot-links">
+        <a href="./faq/">FAQ</a>
+        <a href="https://github.com/nithin0x/htb-study-trackers/issues/new?template=suggest-resource.yml&amp;where=Not+sure&amp;title=%5BResource%5D+%5BCWES%5D+">Suggest a resource</a>
+        <a href="https://github.com/nithin0x/htb-study-trackers/issues/new?template=report-problem.yml&amp;where=CWES+hub&amp;title=%5BProblem%5D+%5BCWES%5D+">Report a problem</a>
+      </div>
+    </div>
+  </footer>
+
+<script src="assets/js/passed.js?v=2"></script>
 <script>
-  /* saved progress on each tile (same-origin localStorage, set by the trackers) */
-  document.querySelectorAll(".tile[data-key]").forEach(function (t) {
-    var st; try { st = JSON.parse(localStorage.getItem(t.dataset.key)); } catch (e) { return; }
-    if (!st || !st.done || typeof st.done !== "object") return;
-    var total = +t.dataset.tasks, done = 0;
-    for (var k in st.done) if (st.done[k] === true && /^\d+-\d+$/.test(k)) done++;
-    if (!done || !total) return;
-    var pct = Math.min(100, Math.floor(done / total * 100)), full = done >= total;
-    var bd = t.querySelector(".bd"); bd.classList.add("on"); bd.style.setProperty("--p", full ? 100 : pct);
-    var d = document.createElement("a"); d.className = "prog"; d.href = t.querySelector(".open").getAttribute("href") + "tracker/";
-    d.innerHTML = full ? "COMPLETE &check;" : pct + "% <span>&middot; CONTINUE &rarr;</span>";
-    (t.querySelector(".lv") || t.querySelector(".name")).after(d);
-  });
+  (function () {
+    var menuBtn = document.getElementById("menuBtn");
+    var mobileMenu = document.getElementById("mobileMenu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.onclick = function () {
+        var open = mobileMenu.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(open));
+      };
+    }
+    function openPassed() {
+      if (window.HTBPassed) HTBPassed.open("cwes");
+      else alert("Couldn't load the I passed card. Check your connection and reload the page.");
+    }
+    document.getElementById("passedBtn").onclick = openPassed;
+    var mobPassed = document.getElementById("passedBtnMob");
+    if (mobPassed) mobPassed.onclick = openPassed;
+
+    try {
+      var st = JSON.parse(localStorage.getItem("cwes_tracker_v2"));
+      if (st && st.done && typeof st.done === "object") {
+        var total = 231, done = 0;
+        for (var k in st.done) if (st.done[k] === true && /^\d+-\d+$/.test(k)) done++;
+        if (done > 0) {
+          var pct = done >= total ? 100 : Math.min(99, Math.round(done / total * 100));
+          document.getElementById("pvPct").textContent = pct + "%";
+          document.getElementById("cardTrackerStat").textContent = done + " / " + total + " tasks";
+          document.getElementById("heroOpen").querySelector("span").textContent = done >= total ? "Tracker complete" : "Continue tracker (" + pct + "%)";
+          document.getElementById("cardOpenTracker").textContent = done >= total ? "Review tracker" : "Continue tracker";
+        }
+      }
+    } catch (e) {}
+
+    try {
+      var pb = JSON.parse(localStorage.getItem("cwes_practice_v1"));
+      if (pb && pb.done && typeof pb.done === "object") {
+        var ids = ["onlyhacks","armaxis","blackout-ops","speednet","soccer","delivery","shoppy","bashed","cap","twomillion","return","trick","reset","bountyhunter","friendzone","headless","alert","usage","cronos","nineveh","editorial","goodgames","opensource","imagery","forge","shibboleth","saturn","broscience","era","monitorsthree","instant","union","timing","redcross","node","enterprise","pollution","altered"];
+        var boxDone = 0;
+        for (var i = 0; i < ids.length; i++) if (pb.done[ids[i]] === true) boxDone++;
+        if (boxDone > 0) {
+          document.getElementById("cardBoxStat").textContent = boxDone + " / " + ids.length + " done";
+          document.getElementById("pvBoxes").textContent = boxDone + " / " + ids.length + " boxes done";
+        }
+      }
+    } catch (e) {}
+  })();
 </script>
 </body>
 </html>

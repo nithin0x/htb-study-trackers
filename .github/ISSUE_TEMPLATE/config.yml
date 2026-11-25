@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Open the site
-    url: https://cnmoseman.github.io/htb-study-trackers/
-    about: A study tracker and prep notes (Obsidian, Notion or CherryTree) for each of the nine certs.
+  - name: Open the CWES Study Kit
+    url: https://nithin0x.github.io/htb-study-trackers/
+    about: Day-by-day study tracker, prep notes (Obsidian, Notion, CherryTree), practice boxes, and resources for HTB CWES.

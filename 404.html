@@ -4,25 +4,50 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Page not found · Study Trackers</title>
-<meta name="theme-color" content="#9fef00">
+<title>Page not found · CWES Study Kit</title>
+<meta name="theme-color" content="#0b0d14">
 <script>
-  // /CPTS, /cpts.html, /cpts/foo -> /cpts/ ; unknown or already tried -> landing
   (function () {
-    var p = location.pathname.split("/");
-    var base = "/" + p[1] + "/", seg = (p[2] || "").split(".")[0].toLowerCase();
-    var tried = p.length === 4 && p[3] === "" && p[2] === seg;
-    location.replace(base + (seg && !tried ? seg + "/" + location.hash : ""));
+    var parts = location.pathname.split("/").filter(Boolean);
+    var isRepoBase = parts[0] === "htb-study-trackers";
+    var base = isRepoBase ? "/htb-study-trackers/" : "/";
+    var rest = (isRepoBase ? parts.slice(1) : parts);
+    var seg = (rest[0] || "").split(".")[0].toLowerCase();
+    var sub = (rest[1] || "").split(".")[0].toLowerCase();
+    var map = {
+      cwes: "cwes/",
+      tracker: "cwes/tracker/",
+      notes: "cwes/notes/",
+      practice: "cwes/practice/",
+      resources: "cwes/resources/",
+      faq: "faq/"
+    };
+    if (seg === "cwes" && map[sub] && rest.length <= 2 && location.pathname !== base + map[sub]) {
+      location.replace(base + map[sub] + location.hash);
+    } else if (seg !== "cwes" && map[seg] && location.pathname !== base + map[seg]) {
+      location.replace(base + map[seg] + location.hash);
+    }
   })();
 </script>
-<noscript><meta http-equiv="refresh" content="0; url=/htb-study-trackers/"></noscript>
 <style>
-  html,body{margin:0;height:100%;background:#141d2b;color:#a4b1cd;font:15px/1.5 system-ui,sans-serif}
-  body{display:grid;place-items:center;text-align:center}
-  a{color:#9fef00}
+  :root{--bg:#0b0d14;--card:#11141c;--raised:#1a1e28;--line:rgba(238,240,245,.08);--text:#eef0f5;--muted:#a3a9b8;--acc:#ed635e}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:400 15px/1.5 "IBM Plex Sans",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  body{display:grid;place-items:center;padding:24px}
+  .box{max-width:420px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .k{font:400 12px/16px "IBM Plex Mono",ui-monospace,monospace;color:var(--muted);margin:0 0 8px}
+  h1{font:500 24px/1.2 "IBM Plex Sans",system-ui,sans-serif;margin:0 0 8px;color:var(--text)}
+  p{margin:0 0 20px;color:var(--muted);font-size:14px}
+  a{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;background:var(--text);color:#07080d;font:500 14px/1 "IBM Plex Sans",system-ui,sans-serif;text-decoration:none}
+  a:hover{background:#fff}
 </style>
 </head>
 <body>
-<p>Page not found. <a href="/htb-study-trackers/">Go to all trackers</a></p>
+  <main class="box">
+    <p class="k">404</p>
+    <h1>Page not found</h1>
+    <p>That study track or page is not in this repository. Only the HTB CWES study kit is hosted here.</p>
+    <a href="/htb-study-trackers/">Open CWES Study Kit</a>
+  </main>
 </body>
 </html>

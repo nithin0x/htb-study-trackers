@@ -1,23 +1,16 @@
 name: Suggest a resource
-description: Share a write-up, video, cheat sheet, or practice box that helped you.
-title: "[Resource] "
-labels: ["resource"]
+description: Share a write-up, video, cheat sheet, or practice box that helped with CWES prep.
+title: "[Resource] [CWES] "
+labels: ["resource", "cwes"]
 body:
   - type: markdown
     attributes:
-      value: Thanks for sharing. I review every suggestion before it goes into a tracker or the prep notes.
-  - type: dropdown
-    id: cert
-    attributes:
-      label: Cert
-      options: [CJCA, CPTS, CWES, CWEE, CDSA, CAPE, CWPE, COAE, CDEP, All / several, Not cert-specific]
-    validations:
-      required: true
+      value: Thanks for sharing. Submissions are reviewed before being added to the CWES tracker or prep notes.
   - type: dropdown
     id: where
     attributes:
       label: Where should it go
-      description: Prep notes only list command and payload cheat sheets. HTB Labs boxes go in Practice boxes. Everything else goes in the tracker's Resources tab.
+      description: Prep notes only list command and payload cheat sheets. HTB Labs boxes go in Practice boxes. Everything else goes in Resources.
       options: [Study tracker (resources), Practice boxes, Prep notes (command sources), Not sure]
     validations:
       required: true

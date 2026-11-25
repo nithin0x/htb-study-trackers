@@ -1,20 +1,13 @@
 name: Report a problem
-description: A wrong module, a dead link, a typo, or something broken in a tracker, the prep notes, or the site.
-title: "[Problem] "
-labels: ["problem"]
+description: A wrong module, a dead link, a typo, or something broken in the CWES tracker, prep notes, or site.
+title: "[Problem] [CWES] "
+labels: ["problem", "cwes"]
 body:
-  - type: dropdown
-    id: cert
-    attributes:
-      label: Cert
-      options: [CJCA, CPTS, CWES, CWEE, CDSA, CAPE, CWPE, COAE, CDEP, All / several, Not cert-specific]
-    validations:
-      required: true
   - type: dropdown
     id: where
     attributes:
       label: Where
-      options: [Study tracker, Practice boxes, Resources page, Prep notes, Notes page, Cert page, Cert picker, Landing page, FAQ, Other]
+      options: [Study tracker, Practice boxes, Resources page, Prep notes, Notes page, CWES hub, FAQ, Other]
     validations:
       required: true
   - type: textarea
@@ -28,9 +21,9 @@ body:
     id: browser
     attributes:
       label: Browser and device (for display problems)
-      placeholder: Chrome on Windows, Safari on iPhone
+      placeholder: Chrome on Linux, Safari on iPhone
   - type: input
     id: obsidian
     attributes:
       label: App, version and OS (for prep notes problems)
-      placeholder: Obsidian 1.8 on Windows, Notion in Chrome, CherryTree 1.2 on Kali
+      placeholder: Obsidian 1.8 on Linux, Notion in Chrome, CherryTree 1.2 on Kali

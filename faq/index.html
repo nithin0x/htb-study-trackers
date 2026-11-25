@@ -3,95 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FAQ · Study Trackers</title>
+<title>FAQ · CWES Study Kit</title>
+<meta name="description" content="Beginner FAQ for the HTB CWES Study Kit: how the study tracker, prep notes, practice boxes and resources work, HTB terms, note-taking apps, methodology and reporting.">
 <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
-<meta name="theme-color" content="#9fef00">
+<meta name="theme-color" content="#0b0d14">
+<link rel="canonical" href="https://nithin0x.github.io/htb-study-trackers/faq/">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://cnmoseman.github.io/htb-study-trackers/faq/">
-<meta property="og:url" content="https://cnmoseman.github.io/htb-study-trackers/faq/">
-<meta property="og:title" content="Study Trackers FAQ">
-<meta property="og:description" content="Answers for people new to Hack The Box: how the trackers, prep notes, practice boxes and resources pages work, what the HTB terms mean, and how to set up your notes, methodology and report.">
-<meta property="og:image" content="https://cnmoseman.github.io/htb-study-trackers/assets/share/faq-v2.png">
+<meta property="og:url" content="https://nithin0x.github.io/htb-study-trackers/faq/">
+<meta property="og:title" content="CWES Study Kit FAQ">
+<meta property="og:description" content="Plain answers for studying for the HTB CWES: how the tracker, prep notes, practice boxes and resources work, HTB terms, note-taking apps, methodology and reporting.">
+<meta property="og:image" content="https://nithin0x.github.io/htb-study-trackers/assets/share/faq-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="New here? Start with this. A beginner FAQ for the HTB study trackers, shown with the cert badges.">
+<meta property="og:image:alt" content="CWES Study Kit FAQ">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Beginner FAQ for the HTB study trackers: how the trackers, prep notes, practice boxes and resources pages work, HTB terms, note-taking apps, building a methodology and reporting.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@400..700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#141d2b;--panel:#1a2332;--line:#243044;--text:#eef1f8;--muted:#a4b1cd;--dim:#7c8aa5;--green:#9fef00;--ink:#0d1420}
+  :root{
+    --bg-deep:#07080d;
+    --bg:#0b0d14;
+    --surface:#11141c;
+    --raised:#1a1e28;
+    --raised-hover:#222734;
+    --line:rgba(238,240,245,.08);
+    --line-strong:rgba(238,240,245,.16);
+    --text:#eef0f5;
+    --secondary:#a3a9b8;
+    --muted:#848c9f;
+    --acc:#ed635e;
+    --acc-dim:rgba(237,99,94,.12);
+    --acc-ink:#07080d;
+    --ok:#4cc38a;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --sans:"IBM Plex Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  html,body{margin:0;background:var(--bg);color:var(--text);font-family:"Saira",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--green)}a:hover{color:var(--text)}
-  .hero{background:var(--green);color:var(--ink);padding:22px 40px 36px}
-  .hero .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font:600 12px "IBM Plex Mono",monospace;letter-spacing:.08em}
-  .hero .bar a{color:var(--ink);text-decoration:none}.hero .bar a:hover{text-decoration:underline}
-  .hero h1{font:700 clamp(40px,6.5vw,68px)/.95 "Chakra Petch",sans-serif;letter-spacing:-.045em;margin:40px 0 0}
-  .hero p{font:400 17px/1.5 "Chakra Petch",sans-serif;margin:22px 0 0;max-width:620px}
-  .wrap{padding:32px 40px 0;max-width:980px;margin:0 auto}
-  section{margin-top:40px;scroll-margin-top:16px}
-  h2{font:600 15px "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--green);margin:0 0 14px}
-  details{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
-  details[open]{border-color:#34445e}
-  summary{cursor:pointer;list-style:none;padding:15px 18px;font:600 17px/1.35 "Chakra Petch",sans-serif;display:flex;gap:12px;align-items:baseline}
-  summary::-webkit-details-marker{display:none}
-  summary::before{content:"+";font:700 16px "IBM Plex Mono",monospace;color:var(--green);width:12px;flex:none}
-  details[open] summary::before{content:"\2212"}
-  summary:hover{color:var(--green)}
-  .a{padding:0 18px 16px 42px;font:400 16px/1.6 "Saira",sans-serif;color:var(--muted)}
-  .a p{margin:0 0 .75em}.a p:last-child{margin-bottom:0}
-  .a ul,.a ol{margin:0 0 .75em;padding-left:1.2em}.a li{margin:.25em 0}
-  .a .tw{overflow-x:auto;margin:0 0 .75em}
-  .a table{border-collapse:collapse;width:100%;font-size:.92em}
-  .a th,.a td{text-align:left;padding:.45em .7em;border-bottom:1px solid var(--line);white-space:nowrap}
-  .a th{font-family:"IBM Plex Mono",monospace;font-size:.78em;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);font-weight:500}
-  @media (max-width:600px){.a th,.a td{white-space:normal;padding:.45em .4em}}
-  .a strong{color:var(--text);font-weight:600}
-  code{font:500 .88em "IBM Plex Mono",monospace;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--text)}
-  pre{font:500 13px/1.5 "IBM Plex Mono",monospace;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;color:var(--text);margin:0 0 .75em}
-  footer{margin-top:56px;padding:24px 0;border-top:1px solid var(--line);font:500 13px "Saira",sans-serif;color:var(--dim);text-align:center}
-  footer a{color:var(--muted)}footer a:hover{color:var(--green)}
-  @media (max-width:560px){.hero,.wrap{padding-left:16px;padding-right:16px}.hero h1{margin-top:28px}.hero .bar{font-size:11px;letter-spacing:.04em}.a{padding-left:18px}summary{font-size:16px}}
+  html,body{margin:0;background:var(--bg);color:var(--text);font:400 15px/22px var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit}
+  :focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:6px}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+  .content{max-width:960px;margin:0 auto;padding:36px 32px 56px}
+  .ic{width:16px;height:16px;flex:none;display:inline-block}
 
+  /* Navigation */
+  .nav-bar{border-bottom:1px solid var(--line);background:var(--bg)}
+  .nav-in{max-width:1280px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:inline-flex;align-items:center;gap:12px;font:500 16px/1 var(--sans);color:var(--text);white-space:nowrap}
+  .brand img{width:28px;height:28px;border-radius:50%;display:block;border:1px solid var(--line)}
+  .nav-links{display:flex;align-items:center;gap:8px}
+  .nav-links a{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 12px;border-radius:8px;font:400 14px/1 var(--sans);color:var(--secondary);transition:color 150ms var(--ease),background-color 150ms var(--ease)}
+  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--text);background:var(--raised)}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;background:var(--text);color:var(--bg-deep)!important;font:500 14px/1 var(--sans)!important;white-space:nowrap;transition:background-color 150ms var(--ease),transform 120ms var(--ease)}
+  .nav-cta:hover{background:#fff!important}
+  .nav-cta:active{transform:scale(.98)}
+  .menu-btn{display:none;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:var(--raised);color:var(--text);cursor:pointer}
+  .mobile-menu{display:none;border-bottom:1px solid var(--line);background:var(--surface);padding:12px 20px 16px}
+  .mobile-menu.open{display:grid;gap:4px}
+  .mobile-menu a{display:flex;align-items:center;justify-content:space-between;height:40px;padding:0 12px;border-radius:8px;color:var(--secondary);font-size:14px}
+  .mobile-menu a:hover,.mobile-menu a[aria-current="page"]{background:var(--raised);color:var(--text)}
+
+  /* Page header */
+  .page-head{padding:44px 0 36px;border-bottom:1px solid var(--line)}
+  .sig{display:inline-flex;align-items:center;gap:8px;font:400 13px/20px var(--mono);color:var(--secondary);margin:0 0 12px}
+  .sig-dot{width:6px;height:6px;border-radius:50%;background:var(--acc);flex:none}
+  .page-head h1{font:500 clamp(30px,4vw,44px)/1.08 var(--sans);letter-spacing:-.025em;margin:0;color:var(--text)}
+  .page-head p.sub{font:400 16px/26px var(--sans);color:var(--secondary);margin:12px 0 0;max-width:42rem}
+
+  /* Search & tabs */
   .tools{display:flex;flex-direction:column;gap:16px}
-  #q{width:100%;max-width:520px;font:500 16px "Saira",sans-serif;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px;outline:none}
-  #q:focus{border-color:var(--green)}
+  #q{width:100%;max-width:520px;font:400 15px/20px var(--sans);color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px 16px;outline:none;transition:border-color 150ms var(--ease)}
+  #q::placeholder{color:var(--muted)}
+  #q:focus{border-color:var(--acc)}
   .tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line)}
-  .tabs button{font:600 12px "IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:none;border:0;border-bottom:2px solid transparent;padding:10px 14px;cursor:pointer;margin-bottom:-1px}
+  .tabs button{font:500 12px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:none;border:0;border-bottom:2px solid transparent;padding:11px 14px;cursor:pointer;margin-bottom:-1px;transition:color 150ms var(--ease)}
   .tabs button:hover{color:var(--text)}
-  .tabs button.on{color:var(--green);border-bottom-color:var(--green)}
-  #none{color:var(--muted);margin-top:28px}
-  section{margin-top:32px}
+  .tabs button.on{color:var(--acc);border-bottom-color:var(--acc)}
+  #none{color:var(--secondary);margin-top:28px;font-size:14px}
 
-</style>
-<script>
-  /* page-view counter (GoatCounter, no cookies); live site only */
-  if (location.hostname === "cnmoseman.github.io") {
-    var gc = document.createElement("script");
-    gc.async = true; gc.src = "https://cnmoseman.github.io/htb-study-trackers/assets/js/count.js";
-    gc.dataset.goatcounter = "https://cnmoseman.goatcounter.com/count";
-    document.head.appendChild(gc);
+  /* FAQ sections */
+  section{margin-top:34px;scroll-margin-top:18px}
+  h2{font:500 12px/16px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin:0 0 14px}
+  details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;transition:border-color 150ms var(--ease)}
+  details:hover,details[open]{border-color:var(--line-strong)}
+  summary{cursor:pointer;list-style:none;padding:15px 18px;font:500 16px/22px var(--sans);color:var(--text);display:flex;gap:12px;align-items:baseline}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";font:500 15px/1 var(--mono);color:var(--acc);width:12px;flex:none}
+  details[open] summary::before{content:"\2212"}
+  summary:hover{color:#fff}
+  .a{padding:0 18px 18px 42px;font:400 14.5px/23px var(--sans);color:var(--secondary)}
+  .a a{color:var(--acc);text-decoration:underline;text-underline-offset:3px}
+  .a a:hover{color:var(--text)}
+  .a p{margin:0 0 12px}.a p:last-child{margin-bottom:0}
+  .a ul,.a ol{margin:0 0 12px;padding-left:20px}.a li{margin:4px 0}
+  .a strong{color:var(--text);font-weight:500}
+  .a .tw{overflow-x:auto;margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg-deep)}
+  .a table{border-collapse:collapse;width:100%;font-size:13.5px}
+  .a th,.a td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+  .a tr:last-child td{border-bottom:0}
+  .a th{font:500 11px/16px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  code{font:400 12.5px var(--mono);background:var(--bg-deep);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--text)}
+  pre{font:400 13px/1.5 var(--mono);background:var(--bg-deep);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;color:var(--text);margin:0 0 12px}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:24px 0 32px;font:400 13px/20px var(--sans);color:var(--muted)}
+  .foot-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+  .foot-links{display:flex;flex-wrap:wrap;gap:16px}
+  .foot-links a{color:var(--secondary);transition:color 150ms var(--ease)}
+  .foot-links a:hover{color:var(--text)}
+
+  @media (max-width:720px){
+    .wrap,.nav-in,.content{padding-left:20px;padding-right:20px}
+    .nav-links{display:none}
+    .menu-btn{display:inline-flex}
+    .page-head{padding:32px 0 28px}
+    .a{padding-left:18px}
+    .a th,.a td{white-space:normal;padding:8px 10px}
   }
-</script>
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
-  <header class="hero">
-    <div class="bar"><a href="../">&larr; STUDY TRACKERS</a><span>FAQ</span></div>
-    <h1>New here?<br>Start with this.</h1>
-    <p>Plain answers for people starting out on Hack The Box, especially if this is your first cert. How the trackers, prep notes, practice boxes and resources pages work, what the HTB words mean, and how to set up your notes.</p>
+  <nav class="nav-bar" aria-label="Primary">
+    <div class="nav-in">
+      <a class="brand" href="../">
+        <img src="../assets/badges/cwes.png" alt="CWES emblem" width="28" height="28">
+        <span>CWES Study Kit</span>
+      </a>
+      <div class="nav-links">
+        <a href="../cwes/tracker/">Tracker</a>
+        <a href="../cwes/notes/">Notes</a>
+        <a href="../cwes/practice/">Practice</a>
+        <a href="../cwes/resources/">Resources</a>
+        <a href="./" aria-current="page">FAQ</a>
+        <a class="nav-cta" href="../cwes/tracker/">Open tracker</a>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../cwes/tracker/">Study tracker</a>
+      <a href="../cwes/notes/">Prep notes</a>
+      <a href="../cwes/practice/">Practice boxes</a>
+      <a href="../cwes/resources/">Resources</a>
+      <a href="./" aria-current="page">FAQ</a>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="wrap">
+      <p class="sig"><span class="sig-dot" aria-hidden="true"></span>FAQ · HTB CWES Study Kit</p>
+      <h1>New here? Start with this.</h1>
+      <p class="sub">Plain answers for studying for the Hack The Box CWES: how the study tracker, prep notes, practice boxes, and resources work, what HTB terms mean, and how to set up your notes and reporting.</p>
+    </div>
   </header>
 
-  <main class="wrap">
+  <main class="content">
     <div class="tools">
       <input id="q" type="search" placeholder="Search the FAQ" aria-label="Search the FAQ" autocomplete="off">
       <nav class="tabs" aria-label="Sections">
         <button data-s="all" class="on">All</button>
-        <button data-s="trackers">Trackers, notes, boxes &amp; resources</button>
+        <button data-s="trackers">Tracker, notes, boxes &amp; resources</button>
         <button data-s="htb">HTB basics</button>
         <button data-s="setup">Your setup</button>
         <button data-s="notes">Notes &amp; reports</button>
@@ -100,348 +179,338 @@
     <p id="none" hidden>No questions match that. Try another word.</p>
 
     <section id="trackers">
-      <h2>TRACKERS, NOTES, BOXES &amp; RESOURCES</h2>
+      <h2>Tracker, notes, boxes &amp; resources</h2>
 
       <details>
-        <summary>What is a study tracker?</summary>
+        <summary>What is the CWES study tracker?</summary>
         <div class="a">
-          <p>It's a day-by-day plan for one HTB certification. Every module in the cert's job-role path is split into daily tasks, in the order you should study them, with practice, review days and exam prep mixed in. You check tasks off as you go, and the dashboard shows how far along you are and whether you're on pace.</p>
-          <p>Each tracker also has a Resources tab (videos, exam reviews, notes, tools and tips from people who passed) and an About tab explaining how the cert and exam work.</p>
-          <p>Every cert has its own page on this site with four things on it: the tracker, matching prep notes for Obsidian, Notion or CherryTree, a list of practice boxes (see the next two questions), and a Resources page with every study link in one place, plus my top picks and what the cert costs.</p>
+          <p>It&rsquo;s a day-by-day plan for the HTB Certified Web Exploitation Specialist (CWES). Every module in the Web Penetration Tester job-role path (20 modules, 279 sections) is split into daily tasks in study order, with practice, review days, and exam prep mixed in. You check tasks off as you go, and the dashboard shows your progress, streak, and pace.</p>
+          <p>The tracker also includes a Practice Boxes tab, a Resources tab (videos, exam reviews, cheat sheets, tools, and pass tips), a What It Costs calculator, and an About tab explaining the exam format.</p>
+          <p>This site gives you all four parts of the CWES kit in one place: the <a href="../cwes/tracker/">study tracker</a>, matching <a href="../cwes/notes/">prep notes</a> for Obsidian, Notion, or CherryTree, curated <a href="../cwes/practice/">practice boxes</a>, and a standalone <a href="../cwes/resources/">resources page</a>.</p>
         </div>
       </details>
 
       <details id="prep-notes">
         <summary>What are the prep notes?</summary>
         <div class="a">
-          <p>They're the notes half of the kit: a ready-made notes setup for one cert, in the app you already use. Each cert's page links to its Notes page, where you pick <strong>Obsidian</strong>, <strong>Notion</strong> or <strong>CherryTree</strong>. All three have the same notes inside:</p>
+          <p>They&rsquo;re the notes half of the kit: a ready-made notes setup for CWES in the app you already use. Open the <a href="../cwes/notes/">CWES Notes page</a> and pick <strong>Obsidian</strong>, <strong>Notion</strong>, or <strong>CherryTree</strong>. All three contain the same structure:</p>
           <ul>
-            <li>A <strong>Methodology</strong> section with ten blank, numbered phases. You rename them to the steps of your own workflow and fill them in as you learn.</li>
-            <li>A note for every Academy module in the cert's path, in course order. Each is split into one part per section, ready for your commands and screenshots.</li>
-            <li>An <strong>Exam</strong> section for exam days: targets, credentials, findings, flags and a log for each day, laid out to match the cert's report so the report half-writes itself.</li>
-            <li>Links to community cheat sheets for that cert, plus reporting prep: the cert's SysReptor template and the reporting module.</li>
+            <li>A <strong>Methodology</strong> section with ten blank, numbered phases that you rename and fill in as your own web testing playbook.</li>
+            <li>A note for every Academy module in the CWES path, in course order, split into one section per Academy lesson.</li>
+            <li>An <strong>Exam</strong> workspace for exam days: scope &amp; rules, apps, findings, flags, and a 7-day log aligned with the CWES report.</li>
+            <li>Links to tested community cheat sheets for CWES, starter <code>ffuf</code> and <code>GraphQL</code> notes, and reporting references.</li>
           </ul>
-          <p>Getting them depends on the app. For Obsidian, download the zip, unzip it and choose <strong>Open folder as vault</strong>. It only uses Obsidian's built-in features, so you don't need any plugins. For Notion, open the template and click <strong>Duplicate</strong> to copy it into your workspace (you'll need a free Notion account). For CherryTree, download the .ctd file and open it with <strong>File &rarr; Open</strong>. CherryTree comes with Kali, so you may already have it.</p>
-          <p>All three work offline once you have your copy. In Notion that means the desktop or mobile app, after you mark the pages <strong>Available offline</strong>. If you'd like to look inside first, every Obsidian note is <a href="https://github.com/cnmoseman/htb-study-trackers/tree/main/vaults">on GitHub</a>.</p>
-          <p>Once you start writing, your copy is yours. Later updates on this site won't touch it. Back up the Obsidian folder or the .ctd file like any other file (a cloud drive or Git works). Notion keeps your copy in your workspace.</p>
+          <p>For Obsidian, download the zip, unzip it, and choose <strong>Open folder as vault</strong> (no community plugins needed). For Notion, open the template and click <strong>Duplicate</strong> to copy it into your workspace. For CherryTree, download the <code>.ctd</code> file and open it with <strong>File &rarr; Open</strong>.</p>
+          <p>All three work offline once you have your copy (in Notion, mark pages <strong>Available offline</strong> in the desktop or mobile app). You can browse the Obsidian vault directly <a href="https://github.com/nithin0x/htb-study-trackers/tree/main/vaults/cwes-prep-vault" target="_blank" rel="noopener">on GitHub</a> before downloading.</p>
+          <p>Once you start writing, your copy is yours. Later updates on this site won&rsquo;t touch it. Back up the Obsidian folder or <code>.ctd</code> file like any other folder (Git or cloud drive).</p>
         </div>
       </details>
 
       <details id="practice-boxes">
         <summary>What are practice boxes?</summary>
         <div class="a">
-          <p>It's a list of HTB Labs boxes picked for one cert, grouped from easiest to hardest. Each box shows which Academy modules it practices, links to walkthroughs (IppSec videos and 0xdf write-ups, where they exist), and who recommended it: HTB's prep track for the cert, community prep playlists, or reviews from people who passed. Tick each one off as you solve it.</p>
-          <p>You'll find them on each cert's page and in the tracker's <strong>Practice Boxes</strong> tab. On the site, both show the same list and the same progress, and the tracker's Export backup includes it.</p>
-          <p>They're optional. Everything you need to pass is in the cert's Academy path. Boxes let you practice your methodology without step-by-step help, and each one is a chance to write a mock report. Most need VIP+ (see the question on Free, VIP+ and Pro Labs below).</p>
-          <p>The CDSA and CDEP lists are Sherlocks instead of machines. HTB hasn't recommended any for the CDEP yet, so that list is my best guess, and the page says so.</p>
+          <p>It&rsquo;s a curated list of 38 HTB Labs machines and web challenges picked for CWES prep, grouped from single-bug warm-ups to chained hard boxes. Each box shows which CWES Academy modules it practices, links to walkthroughs (IppSec videos and 0xdf write-ups where available), and notes who recommended it.</p>
+          <p>You can access them on the <a href="../cwes/practice/">Practice Boxes page</a> or inside the tracker&rsquo;s <strong>Practice Boxes</strong> tab. On the site, both share the same browser storage, and the tracker&rsquo;s Export backup includes your solved boxes.</p>
+          <p>Boxes are optional. Everything tested on the exam is covered inside HTB Academy&rsquo;s Web Penetration Tester path. Practice boxes help you sharpen black-box enumeration, exploit chaining, and report writing without guided prompts.</p>
         </div>
       </details>
 
       <details>
         <summary>Is this made by Hack The Box? Does it cost anything?</summary>
         <div class="a">
-          <p>No to both. These are free, independent study aids, not affiliated with or endorsed by Hack The Box. You don't need an account or a sign-up. The HTB content itself (Academy modules, exam vouchers, lab subscriptions) is paid and comes from HTB.</p>
+          <p>No to both. This is a free, independent study aid, not affiliated with or endorsed by Hack The Box. You don&rsquo;t need an account or sign-up. The HTB content itself (Academy modules, exam vouchers, and HTB Labs subscriptions) is paid and comes directly from HTB.</p>
         </div>
       </details>
 
       <details>
         <summary>Which timeline should I pick?</summary>
         <div class="a">
-          <p>Each tracker offers five timelines, built for roughly 50, 40, 30, 20 or 10 hours of study a week. Pick the one that matches the hours you can really give it, not the hours you wish you had. Bigger certs take more days at the same pace. The CJCA, for example, runs from about 25 days at 50 hours a week to about 130 days at 10.</p>
-          <p>You can switch later without losing anything. Your checked tasks and notes stay attached to the tasks themselves, so they move with you to the new timeline.</p>
-          <p>The <a href="../picker/">cert picker</a> also suggests one. Answer its hours question, and the <strong>Start the plan</strong> button on your result (for example "Start the 160-day CPTS plan") opens the tracker on the timeline that fits.</p>
+          <p>The CWES tracker offers five timelines: <strong>30, 40, 50, 75, or 150 days</strong>, built for roughly 50, 38, 30, 20, or 10 hours of study per week. Pick the one that matches the real hours you can consistently dedicate each week.</p>
+          <p>You can switch timelines at any time without losing progress. Your checked tasks and notes stay attached to the underlying curriculum items and carry over automatically.</p>
         </div>
       </details>
 
       <details>
         <summary>Where do the time estimates come from, and how accurate are they?</summary>
         <div class="a">
-          <p>They come from Hack The Box. Every module in HTB Academy shows an estimated completion time on its cert's path page, and the trackers use those official numbers. Each module's hours are spread across its days by section, and the timelines divide the path's total hours by your weekly hours.</p>
-          <p>Treat them as a minimum. Many learners find a module takes longer than HTB's estimate, especially when you're new to the topic, take thorough notes, or get stuck on a skills assessment. That's normal and doesn't mean you're slow.</p>
-          <p>If you keep running over, the pace box will show you're behind. Switch to a longer timeline. Your progress carries over, and it's better to plan for your real pace than to fight the calendar.</p>
+          <p>They come from Hack The Box. Every module in HTB Academy publishes an estimated completion time on the path page, and the tracker uses those official numbers spread across each module&rsquo;s sections.</p>
+          <p>Treat them as a baseline minimum. Many learners find modules take longer than HTB&rsquo;s estimate, especially when taking thorough notes or solving skills assessments without hints. If you regularly run over, switch to a longer timeline so your pace indicator reflects reality.</p>
         </div>
       </details>
 
       <details>
         <summary>I fell behind. What now?</summary>
         <div class="a">
-          <p>Everyone does. The pace box on the dashboard tells you whether you're ahead, on pace or behind, based on your start date. If you're behind you can:</p>
+          <p>Everyone does. The pace strip on the dashboard tells you whether you&rsquo;re ahead, on pace, or behind based on your start date. If you fall behind, you can:</p>
           <ul>
-            <li>Use the catch-up days built into the plan.</li>
-            <li>Switch to a longer timeline. Your progress carries over.</li>
-            <li>Change your start date to give yourself a fresh baseline.</li>
+            <li>Use the catch-up and review days built into the schedule.</li>
+            <li>Switch to a longer timeline (your checked tasks carry over).</li>
+            <li>Adjust your start date to set a fresh baseline.</li>
           </ul>
-          <p>The plan is there to keep you moving. Nobody's grading you on it.</p>
+          <p>The plan exists to keep you moving, not to stress you out.</p>
         </div>
       </details>
 
       <details>
         <summary>Where is my progress saved?</summary>
         <div class="a">
-          <p>In your browser, on your device. Nothing is sent anywhere. That has a few consequences worth knowing:</p>
+          <p>Locally in your browser&rsquo;s <code>localStorage</code> on your device. Nothing is transmitted to any server. That means:</p>
           <ul>
-            <li>Progress on your computer won't show up on your phone or on another browser.</li>
-            <li>Clearing your browser's site data (or cookies and site data) erases it.</li>
-            <li>Private or incognito windows forget everything when you close them.</li>
+            <li>Progress on your laptop won&rsquo;t automatically sync to your phone or another browser.</li>
+            <li>Clearing your browser&rsquo;s site data erases your saved progress.</li>
+            <li>Private or incognito windows discard progress when closed.</li>
           </ul>
-          <p>That's why the <strong>Export backup</strong> button exists. See the next question. Practice boxes are saved the same way, and the tracker's backup includes them.</p>
+          <p>Use <strong>Export backup</strong> regularly to keep a JSON copy of both your tracker progress and solved practice boxes.</p>
         </div>
       </details>
 
       <details>
         <summary>How do backups work? How do I move to another computer?</summary>
         <div class="a">
-          <p>Click <strong>Export backup</strong> in the tracker. It downloads a small file named like <code>cjca-tracker-backup.json</code> with your start date, timeline, checked tasks and notes. On the other computer, open the same tracker, click <strong>Import</strong> and choose that file.</p>
-          <p>Export one every week or so and keep it somewhere safe, like a cloud drive or your notes folder. If you ever clear your browser, importing it puts you right back where you were.</p>
+          <p>Click <strong>Export backup</strong> in the tracker. It downloads a JSON file named <code>cwes-tracker-backup.json</code> containing your start date, timeline, checked tasks, daily notes, and solved practice boxes. On another browser or device, open the tracker, click <strong>Import</strong>, and select that file.</p>
+          <p>Export a backup once a week and store it in your notes folder or cloud drive so you never lose progress.</p>
         </div>
       </details>
 
       <details id="website-or-download">
-        <summary>Should I use the website or download the file?</summary>
+        <summary>Should I use the website or download the HTML file?</summary>
         <div class="a">
-          <p>Either works. Opening a tracker on this site is the quickest way to start. The <strong>Download .html</strong> button on each cert's page saves the tracker as a single HTML file that runs offline in any browser.</p>
-          <p>One catch: the website and a downloaded file keep <em>separate</em> progress, because your browser treats them as different places. Pick one and stick with it, or move between them with Export and Import.</p>
-          <p>The website version also gets updates, like new resources, as soon as they're published. On rare occasions an update changes a tracker's plan in a way that affects its timeline, and your days might shift along with it. A downloaded file never changes, so it keeps your plan exactly as it was, but it also won't get new resources unless you download it again.</p>
-          <p>Practice boxes work the same way: use the page on the site, or save it with <strong>Download this page</strong>. On the site, your ticks also show in the tracker's Practice Boxes tab.</p>
+          <p>Either works. Opening the tracker on this site is the fastest way to get started. Clicking <strong>Download .html</strong> saves the tracker as a single self-contained HTML file that runs offline in any browser.</p>
+          <p>One catch: the hosted site and a local downloaded file store <em>separate</em> progress because browsers isolate storage per origin. Pick one and stick with it, or transfer progress using Export and Import.</p>
+          <p>The hosted version receives resource additions and fixes automatically. A downloaded copy stays frozen unless you download a fresh copy. Practice boxes work the same way via <strong>Download this page</strong>.</p>
         </div>
       </details>
 
       <details>
         <summary>I already finished some modules. Do I start from day one?</summary>
         <div class="a">
-          <p>No. Open <strong>Already done some modules?</strong> in the tracker and tick the modules you've completed. The tracker checks off those tasks for you. If you've passed another HTB cert, the <strong>Passed another cert?</strong> shortcuts tick every module the two paths share.</p>
-          <p>Clicking a day's <strong>DAY</strong> badge also marks that whole day done in one click, which is handy for catching up on days you did but didn't tick.</p>
+          <p>No. Open <strong>Already done some modules?</strong> in the tracker and tick the CWES modules you&rsquo;ve already completed. The tracker checks off their study tasks for you. If you&rsquo;ve already passed CPTS, CJCA, or CDSA, the quick shortcuts inside that dialog tick every shared module in one click.</p>
+          <p>You can also click any day&rsquo;s <strong>DAY</strong> badge to mark that entire day complete at once.</p>
         </div>
       </details>
 
       <details>
-        <summary>What do "Free", "VIP+" and "Pro Labs" mean next to a resource or box?</summary>
+        <summary>What do &ldquo;Free&rdquo;, &ldquo;VIP+&rdquo; and &ldquo;Pro Labs&rdquo; mean next to a resource or box?</summary>
         <div class="a">
-          <p>They tell you what you need to access a practice lab on the main HTB platform (not the Academy). <strong>Free</strong> means any HTB account can play it. <strong>VIP+</strong> means it's retired, and retired machines and challenges need a paid VIP+ subscription. HTB does keep a small, rotating set of retired machines free, so a VIP+ box might be free for a while when you look. <strong>Pro Labs</strong> (marked <strong>HTB PRO</strong> in the practice boxes) need an HTB PRO subscription, which includes 10 of them (Dante, Zephyr and Offshore among them).</p>
-          <p>Labels can also go out of date. Active machines are free, but when one retires it becomes VIP+, so a box marked Free here might need VIP+ by the time you get to it. HTB's <a href="https://help.hackthebox.com/en/articles/7257535-htb-labs-subscriptions">HTB Labs Subscriptions</a> page has the current details for each plan.</p>
-          <p>None of these are required to pass. They're extra practice.</p>
+          <p>They describe the HTB Labs subscription tier required on hackthebox.com (separate from HTB Academy). <strong>Free</strong> means any HTB account can play it. <strong>VIP+</strong> means the box or challenge is retired and normally requires a VIP+ subscription (though HTB keeps a small rotating pool of retired machines free). <strong>Pro Labs</strong> require an HTB PRO subscription.</p>
+          <p>Access status changes as active machines retire. Check HTB&rsquo;s <a href="https://help.hackthebox.com/en/articles/7257535-htb-labs-subscriptions" target="_blank" rel="noopener">HTB Labs Subscriptions</a> page for current plan details. None of these are required to pass the CWES.</p>
         </div>
       </details>
 
       <details>
         <summary>A link is broken, or I know a great resource. Who do I tell?</summary>
         <div class="a">
-          <p>Use <a href="https://github.com/cnmoseman/htb-study-trackers/issues/new?template=suggest-resource.yml&amp;cert=Not+cert-specific&amp;where=Not+sure&amp;title=%5BResource%5D+">Suggest a resource</a> or <a href="https://github.com/cnmoseman/htb-study-trackers/issues/new?template=report-problem.yml&amp;cert=Not+cert-specific&amp;where=FAQ&amp;title=%5BProblem%5D+">Report a problem</a> on GitHub. Both work for the trackers, the prep notes and the practice boxes. You'll need a free GitHub account.</p>
+          <p>Use <a href="https://github.com/nithin0x/htb-study-trackers/issues/new?template=suggest-resource.yml&amp;where=Not+sure&amp;title=%5BResource%5D+%5BCWES%5D+" target="_blank" rel="noopener">Suggest a resource</a> or <a href="https://github.com/nithin0x/htb-study-trackers/issues/new?template=report-problem.yml&amp;where=FAQ&amp;title=%5BProblem%5D+%5BCWES%5D+" target="_blank" rel="noopener">Report a problem</a> on GitHub. Both cover the tracker, prep notes, practice boxes, and resources.</p>
         </div>
       </details>
     </section>
 
     <section id="htb">
-      <h2>HTB BASICS</h2>
+      <h2>HTB basics</h2>
 
       <details>
-        <summary>What's the difference between HTB Academy and HTB Labs?</summary>
+        <summary>What&rsquo;s the difference between HTB Academy and HTB Labs?</summary>
         <div class="a">
-          <p><strong>HTB Academy</strong> (academy.hackthebox.com) is where the courses live. Its modules teach a topic step by step, with small labs and questions to answer. Certifications are earned through the Academy.</p>
-          <p><strong>HTB Labs</strong>, the main hackthebox.com platform, is where the "boxes" are: full practice machines you attack without instructions. They're great for practice, but separate from the Academy and billed separately. Each cert's <a href="#practice-boxes">practice boxes</a> pick out the ones worth doing for that exam.</p>
+          <p><strong>HTB Academy</strong> (academy.hackthebox.com) is where the CWES course lives. Its modules teach each web vulnerability class step by step with guided labs and questions, and you must finish 100% of the Web Penetration Tester path to unlock the CWES exam.</p>
+          <p><strong>HTB Labs</strong> (app.hackthebox.com) is where standalone machines and web challenges live: unguided targets you enumerate and exploit on your own. It&rsquo;s billed separately from Academy and is purely optional extra practice.</p>
         </div>
       </details>
 
       <details>
         <summary>What are job-role paths, modules and sections?</summary>
         <div class="a">
-          <p>A <strong>module</strong> is one course on one topic, like "Linux Fundamentals" or "Network Enumeration with Nmap". Each module is split into <strong>sections</strong>, short lessons that often end with a question you answer from a lab.</p>
-          <p>A <strong>job-role path</strong> is HTB's ordered list of modules for a role. Each certification has one, and you have to finish the whole path before the exam unlocks. The About tab in each tracker says how big that cert's path is.</p>
+          <p>A <strong>module</strong> is one focused course on a topic, such as &ldquo;SQL Injection Fundamentals&rdquo; or &ldquo;Server-side Attacks&rdquo;. Each module is broken into <strong>sections</strong>, short lessons that often end with hands-on lab questions.</p>
+          <p>A <strong>job-role path</strong> is HTB&rsquo;s ordered curriculum for a certification. For CWES, that&rsquo;s the <strong>Web Penetration Tester</strong> path: 20 modules and 279 sections, all of which must be completed before taking the exam.</p>
         </div>
       </details>
 
       <details>
-        <summary>What's a skills assessment?</summary>
+        <summary>What&rsquo;s a skills assessment?</summary>
         <div class="a">
-          <p>The last section of many modules. Instead of step-by-step questions, you get a scenario and have to use what the module taught to solve it on your own. It's the closest thing to exam practice inside the path. If one feels hard, redo it before the exam. The trackers schedule time for that.</p>
+          <p>The final section of many Academy modules. Instead of guided steps, you face an unguided web application and have to apply what the module taught on your own. Skills assessments are the closest in-course preparation for the CWES exam, and the tracker schedules review time to redo the toughest ones.</p>
         </div>
       </details>
 
       <details>
         <summary>What are cubes, subscriptions and vouchers?</summary>
         <div class="a">
-          <p><strong>Cubes</strong> are the Academy's currency for unlocking modules one at a time. A <strong>subscription</strong> unlocks modules up to a tier every month instead. The exam is a separate purchase called a <strong>voucher</strong>, and some annual plans include one. Prices and plans change, so check HTB's own pricing page before you buy.</p>
-          <p>How many attempts a voucher gives you, and how retakes work, varies by cert. Each tracker's About tab covers it.</p>
-        </div>
-      </details>
-
-      <details id="which-cert">
-        <summary>Which cert should I start with?</summary>
-        <div class="a">
-          <p>If you're new to security, start with the <strong>CJCA</strong>. It's HTB's entry-level cert and covers both attacking and defending, so you'll find out which side you like. After it, most people move on to the CPTS for pentesting or the CDSA for defense.</p>
-          <p>Already have some experience or another cert? The <a href="../picker/">cert picker</a> asks five quick questions and gives you the cert that fits, what to do after it, a study plan for your weekly hours and roughly what it costs.</p>
+          <p><strong>Cubes</strong> are Academy&rsquo;s currency for unlocking modules individually. A <strong>subscription</strong> unlocks modules up to a given tier every month. The exam requires a separate <strong>voucher</strong> ($210 for CWES), which is also bundled into certain annual plans.</p>
+          <p>A CWES voucher includes <strong>2 exam attempts</strong> (the free retake must start within 14 days of feedback and requires having submitted a report on the first attempt). See the tracker&rsquo;s <strong>About the Cert</strong> tab for full rules.</p>
         </div>
       </details>
 
       <details id="cert-cost">
-        <summary>How much does a cert cost?</summary>
+        <summary>How much does the CWES cost?</summary>
         <div class="a">
-          <p>You pay HTB for two things: the exam voucher, and a subscription that unlocks the path's modules. The subscription is usually the bigger part, because you pay it every month you study. Each cert needs a plan that reaches its tier:</p>
+          <p>You pay HTB for two things: an Academy subscription that reaches <strong>Tier II</strong> modules, and the <strong>$210</strong> CWES exam voucher.</p>
           <div class="tw"><table>
-            <tr><th>Cert</th><th>Voucher</th><th>Modules up to</th><th>Plans that reach it</th></tr>
-            <tr><td>CJCA</td><td>$105</td><td>Tier II</td><td>Student, Silver, Gold, Platinum</td></tr>
-            <tr><td>CPTS, CWES, CDSA, COAE</td><td>$210</td><td>Tier II</td><td>Student, Silver, Gold, Platinum</td></tr>
-            <tr><td>CWEE, CAPE, CWPE</td><td>$350</td><td>Tier III</td><td>Gold, Platinum</td></tr>
-            <tr><td>CDEP</td><td>$450</td><td>Tier IV</td><td>Platinum</td></tr>
+            <tr><th>Plan</th><th>Price</th><th>Modules reached</th><th>CWES voucher</th></tr>
+            <tr><td>Student</td><td>$10 / month</td><td>Up to Tier II</td><td>Buy separately ($210)</td></tr>
+            <tr><td>Silver Monthly</td><td>$30 / month</td><td>Up to Tier II</td><td>Buy separately ($210)</td></tr>
+            <tr><td>Silver Annual</td><td>$550 / year</td><td>Up to Tier II</td><td>Included</td></tr>
+            <tr><td>Gold Annual</td><td>$1,400 / year</td><td>Up to Tier III</td><td>Included (more than CWES needs)</td></tr>
           </table></div>
-          <p>Monthly plans are $10 (Student), $30 (Silver), $95 (Gold) and $125 (Platinum). The annual plans include an exam voucher. Every tracker has a <strong>What It Costs</strong> tab that adds it all up for your timeline and compares every plan, and so does each cert's Resources page.</p>
-          <p>Prices are from October 12, 2026, in USD before tax. They change, so check HTB's <a href="https://help.hackthebox.com/en/articles/13677074-academy-subscriptions" target="_blank" rel="noopener">Academy subscriptions</a> page before you buy.</p>
+          <p>Use the interactive <a href="../cwes/resources/#cost">What It Costs calculator</a> (also inside the tracker) to compare plans for your chosen 30 to 150-day timeline.</p>
+          <p>Prices are from October 12, 2026 in USD before tax. Always verify current pricing on HTB&rsquo;s <a href="https://help.hackthebox.com/en/articles/13677074-academy-subscriptions" target="_blank" rel="noopener">Academy subscriptions</a> page before buying.</p>
         </div>
       </details>
 
       <details id="cheapest">
-        <summary>What's the cheapest way to get a cert?</summary>
+        <summary>What&rsquo;s the cheapest way to get the CWES?</summary>
         <div class="a">
-          <p>Pay monthly, finish the path as fast as you can, and buy the voucher on its own when you're ready for the exam. Every month you cut saves a month of the plan.</p>
+          <p>Pay monthly, finish the Web Penetration Tester path consistently, and buy the $210 voucher separately once you&rsquo;re ready for the exam. Every month you finish earlier saves another billing cycle.</p>
           <ul>
-            <li><strong>Got a student email?</strong> The Student plan is $10 a month and reaches Tier II, so it covers the CJCA, CPTS, CWES, CDSA and COAE.</li>
-            <li><strong>Monthly beats annual</strong> unless you'd be paying monthly for about a year. An annual plan only makes sense if you need that long, or if you'll use the extra voucher it comes with.</li>
-            <li><strong>Pick the cheapest plan that reaches your cert's tier.</strong> Gold reaches Tier III, but you don't need it for a Tier II cert.</li>
+            <li><strong>Student email?</strong> The $10/month Student plan reaches Tier II and covers the entire CWES path: roughly <strong>$220 to $260</strong> total (including voucher) depending on pace.</li>
+            <li><strong>Standard monthly:</strong> Silver Monthly ($30/month) plus the $210 voucher totals roughly <strong>$240</strong> at ~50 hours/week (30 days) up to <strong>$360</strong> at ~10 hours/week (150 days).</li>
+            <li><strong>Monthly vs. Annual:</strong> Silver Monthly stays cheaper than Silver Annual ($550) unless you expect to study for close to a full year or want the extra bundled CJCA voucher.</li>
           </ul>
-          <p>The cheapest total for each cert, voucher included, at the fastest (about 50 hours a week) and slowest (about 10 hours a week) timelines:</p>
-          <div class="tw"><table>
-            <tr><th>Cert</th><th>50 h a week</th><th>10 h a week</th><th>On the Student plan</th></tr>
-            <tr><td>CJCA</td><td>$135</td><td>$255</td><td>$115 to $155</td></tr>
-            <tr><td>CPTS</td><td>$300</td><td>$540</td><td>$240 to $320</td></tr>
-            <tr><td>CWES</td><td>$240</td><td>$360</td><td>$220 to $260</td></tr>
-            <tr><td>CDSA</td><td>$240</td><td>$390</td><td>$220 to $270</td></tr>
-            <tr><td>COAE</td><td>$240</td><td>$360</td><td>$220 to $260</td></tr>
-            <tr><td>CWEE</td><td>$540</td><td>$920</td><td>Not available</td></tr>
-            <tr><td>CAPE</td><td>$540</td><td>$1,110</td><td>Not available</td></tr>
-            <tr><td>CWPE</td><td>$445</td><td>$730</td><td>Not available</td></tr>
-            <tr><td>CDEP</td><td>$825</td><td>$1,575</td><td>Not available</td></tr>
-          </table></div>
-          <p>These assume you finish on schedule and pass on the first voucher. Most people take longer than HTB's estimates, so budget a month or two extra. HTB Labs (VIP+ or HTB PRO) is optional and not included.</p>
-          <p>Work it out for your own timeline: <a href="../cjca/resources/#cost">CJCA</a> · <a href="../cpts/resources/#cost">CPTS</a> · <a href="../cwes/resources/#cost">CWES</a> · <a href="../cdsa/resources/#cost">CDSA</a> · <a href="../coae/resources/#cost">COAE</a> · <a href="../cwee/resources/#cost">CWEE</a> · <a href="../cape/resources/#cost">CAPE</a> · <a href="../cwpe/resources/#cost">CWPE</a> · <a href="../cdep/resources/#cost">CDEP</a></p>
+          <p>These estimates assume finishing on schedule and passing within one voucher. Budget an extra month or two if you plan to spend extra time on retired boxes. Compare options on the <a href="../cwes/resources/#cost">CWES cost calculator</a>.</p>
         </div>
       </details>
 
       <details>
         <summary>What are machines, boxes and flags?</summary>
         <div class="a">
-          <p>A <strong>machine</strong> (or <strong>box</strong>) is a computer set up for you to break into legally. A <strong>flag</strong> is a string of text hidden on it that proves you got in. Usually there's a <strong>user flag</strong> for getting a foothold and a <strong>root flag</strong> for taking full control (privilege escalation). Many HTB exams are built from machines like these, so practicing on boxes is good exam prep. A <strong>Sherlock</strong> is the defensive version: you get logs or a disk image and work out what happened.</p>
-          <p>A <strong>writeup</strong> is someone's walkthrough of how they solved a box. Try the box first, then read a writeup to see what you missed.</p>
+          <p>A <strong>machine</strong> (or <strong>box</strong>) is a target system built for legal practice. A <strong>flag</strong> is a hidden text token proving you exploited a vulnerability or gained access. On the CWES exam, you test multiple web applications and submit flags as you compromise them, alongside a full commercial-grade penetration testing report.</p>
+          <p>A <strong>write-up</strong> is a walkthrough of how someone solved a retired box. Always attempt the box on your own first, then check a write-up to see what enumeration steps or chains you missed.</p>
         </div>
       </details>
     </section>
 
     <section id="setup">
-      <h2>YOUR SETUP</h2>
+      <h2>Your setup</h2>
 
       <details>
-        <summary>What is an "attack box"? Pwnbox or my own VM?</summary>
+        <summary>What is an &ldquo;attack box&rdquo;? Pwnbox or my own VM?</summary>
         <div class="a">
-          <p>An attack box is the Linux machine you work from, loaded with security tools. You have two options:</p>
+          <p>An attack box is the Linux environment you test from, preloaded with web testing tools like Burp Suite, ffuf, sqlmap, and feroxbuster. You have two options:</p>
           <ul>
-            <li><strong>Pwnbox</strong> is HTB's attack box that runs in your browser: a Parrot Linux desktop with the tools already installed and already on HTB's network. Any paid Academy plan or purchase includes unlimited Pwnbox time, but each session shuts down eventually, so keep your notes outside it. HTB's <a href="https://help.hackthebox.com/en/articles/5185608-introduction-to-pwnbox">Introduction to Pwnbox</a> shows how to start one.</li>
-            <li><strong>Your own virtual machine</strong> running Kali Linux or Parrot OS, inside free software like VirtualBox or VMware Workstation. It takes an hour to set up, but it's yours, it keeps your files, and it has no time limit. HTB's guide to <a href="https://help.hackthebox.com/en/articles/6369713-installing-parrot-security-on-a-vm">installing Parrot on a VM</a> lists the settings to use, and Kali has its own <a href="https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/">VirtualBox guide</a>.</li>
+            <li><strong>Pwnbox</strong> is HTB&rsquo;s browser-based Parrot Linux desktop, pre-connected to HTB&rsquo;s lab network. Paid Academy plans include unlimited Pwnbox time, though sessions reset, so keep your notes outside it. See HTB&rsquo;s <a href="https://help.hackthebox.com/en/articles/5185608-introduction-to-pwnbox" target="_blank" rel="noopener">Introduction to Pwnbox</a>.</li>
+            <li><strong>Your own virtual machine</strong> running Kali Linux or Parrot OS in VirtualBox or VMware Workstation. It keeps your wordlists, Burp projects, scripts, and browser extensions intact across a 7-day exam. See HTB&rsquo;s <a href="https://help.hackthebox.com/en/articles/6369713-installing-parrot-security-on-a-vm" target="_blank" rel="noopener">Parrot VM guide</a> or Kali&rsquo;s <a href="https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/" target="_blank" rel="noopener">VirtualBox guide</a>.</li>
           </ul>
-          <p>Pwnbox is the easiest way to start. Most people move to their own VM before the exam, since exams run for days.</p>
+          <p>Pwnbox is the quickest way to start module one. Most CWES candidates switch to a local VM well before exam week so their proxy setup and wordlists are already dialed in.</p>
         </div>
       </details>
 
       <details>
         <summary>How do I connect to the labs with the VPN?</summary>
         <div class="a">
-          <p>If you're not using Pwnbox, your VM has to join HTB's lab network. In the Academy, open a lab section, choose to connect with VPN, and download the <code>.ovpn</code> file. Then in your VM's terminal:</p>
+          <p>If you use your own VM, open a lab section in HTB Academy, choose VPN connection, and download the <code>.ovpn</code> file. Then run:</p>
 <pre>sudo openvpn ~/Downloads/academy-regular.ovpn</pre>
-          <p>Use whatever name your file actually has. Leave that terminal open while you work. When it says "Initialization Sequence Completed", you're connected, and the lab's target IP should respond. Don't run Pwnbox and your own VPN connection at the same time.</p>
-          <p>HTB's <a href="https://help.hackthebox.com/en/articles/12710285-connecting-to-academy-vpn">Connecting to Academy VPN</a> article walks through each step, and <a href="https://help.hackthebox.com/en/articles/5185536-connection-troubleshooting">Connection Troubleshooting</a> covers the common errors if it won't connect.</p>
+          <p>Leave that terminal open while studying. Once you see <code>Initialization Sequence Completed</code>, you can reach the target web app IP. Avoid running Pwnbox and a local VPN connection simultaneously.</p>
+          <p>See HTB&rsquo;s <a href="https://help.hackthebox.com/en/articles/12710285-connecting-to-academy-vpn" target="_blank" rel="noopener">Connecting to Academy VPN</a> and <a href="https://help.hackthebox.com/en/articles/5185536-connection-troubleshooting" target="_blank" rel="noopener">Connection Troubleshooting</a> if you run into issues.</p>
         </div>
       </details>
     </section>
 
     <section id="notes">
-      <h2>NOTES &amp; REPORTS</h2>
+      <h2>Notes &amp; reports</h2>
 
       <details>
         <summary>Why do I need notes if I can just reread the modules?</summary>
         <div class="a">
-          <p>Because the exam is a race against the clock, and you need to find a command in seconds, not dig through your whole path. Your notes are also where your report comes from. Take notes on every module from day one: the exact commands that worked and a screenshot of the result.</p>
+          <p>During the 7-day CWES exam you need working payloads, bypasses, and exact commands in seconds rather than digging through 20 modules. Your notes also feed directly into your exam report. Record the commands, HTTP requests, and screenshots that worked from day one.</p>
         </div>
       </details>
 
       <details>
         <summary>Which note-taking app should I choose?</summary>
         <div class="a">
-          <p>The popular ones for this kind of study are Obsidian, Joplin, CherryTree and Notion. They all work, and the best one is the one you'll actually keep using. The prep notes on this site come for three of them (Obsidian, Notion and CherryTree), so you can start with whichever you pick. TCM Security's <a href="https://www.youtube.com/watch?v=KpX7v5Ym3wg">The BEST Notetaking Apps Ranked</a> (9 minutes) compares them with pros and cons for each.</p>
-          <p>Personally, I use Obsidian. It's free, the notes are plain text files you own, and it handles code blocks and screenshots well. That's why the next answer walks through setting it up.</p>
+          <p>The most popular choices are Obsidian, CherryTree, Notion, and Joplin. The CWES prep notes come ready-made for Obsidian, Notion, and CherryTree, so pick whichever fits your workflow best. TCM Security&rsquo;s <a href="https://www.youtube.com/watch?v=KpX7v5Ym3wg" target="_blank" rel="noopener">The BEST Notetaking Apps Ranked</a> compares the trade-offs.</p>
+          <p>Obsidian is the recommended default here: it&rsquo;s free, works offline, handles code blocks and screenshots cleanly, and stores plain Markdown files you own.</p>
         </div>
       </details>
 
       <details>
         <summary>How do I set up Obsidian?</summary>
         <div class="a">
-          <p><strong>Obsidian</strong> is a free note-taking app. Your notes are plain Markdown text files in a normal folder on your computer, so they're never locked inside an app.</p>
-          <p>The quickest start is your cert's prep notes. Install Obsidian, download the zip from the cert's Notes page, unzip it and choose <strong>Open folder as vault</strong>. It's already set up with the folders, module notes and screenshot settings below. If you'd rather build your own from scratch, here's how:</p>
+          <p><strong>Obsidian</strong> is a free Markdown note-taking app where your vault is simply a local folder on disk.</p>
+          <p>The fastest setup is downloading the <a href="../cwes/notes/">CWES Prep Notes zip</a>, unzipping it, and choosing <strong>Open folder as vault</strong>. If you prefer building a vault from scratch:</p>
           <ol>
-            <li>Download it from <a href="https://obsidian.md">obsidian.md</a> and install it.</li>
-            <li>Choose <strong>Create new vault</strong>. A vault is just the folder your notes live in. Name it after the cert, like <code>CJCA</code>.</li>
-            <li>Make a few folders: <code>Modules</code> (one note per module), <code>Methodology</code> (see below), <code>Screenshots</code>, and <code>Exam</code>.</li>
-            <li>In <strong>Settings &rarr; Files and links</strong>, set the default location for new attachments to your <code>Screenshots</code> folder. Now screenshots you paste land there instead of cluttering everything.</li>
-            <li>Start your first module note. Headings start with <code>#</code>, and commands go in code blocks between two lines of three backticks (<code>```</code>), so they stay copyable.</li>
+            <li>Install Obsidian from <a href="https://obsidian.md" target="_blank" rel="noopener">obsidian.md</a>.</li>
+            <li>Choose <strong>Create new vault</strong> and name it <code>CWES</code>.</li>
+            <li>Create folders for <code>Notes</code> (one note per module), <code>Methodology</code>, <code>Screenshots</code>, and <code>Exam</code>.</li>
+            <li>In <strong>Settings &rarr; Files and links</strong>, set the default attachment location to <code>Screenshots</code> so pasted images stay organized.</li>
+            <li>Keep code blocks fenced with triple backticks (<code>```</code>) so payloads and curl commands remain one-click copyable.</li>
           </ol>
-          <p>A simple note for each module is plenty: what the module is about, the commands that worked (with a line on what each does), gotchas, and screenshots. You don't need plugins or themes to start. Plenty of people over-build their Obsidian setup and study less.</p>
-          <p>Back up the vault folder like any other folder (a cloud drive or Git works).</p>
+          <p>You don&rsquo;t need themes or community plugins to start. Back up the vault folder with Git or a cloud drive.</p>
         </div>
       </details>
 
       <details>
         <summary>What is a methodology?</summary>
         <div class="a">
-          <p>You keep two things while you study: <strong>notes</strong> and a <strong>methodology</strong>. Notes follow the course, one per module. Your methodology is your personal playbook, built from those notes but organized by <em>what you're trying to do</em>, not by which module taught it. It answers the question you'll actually have mid-exam, like "I found an SMB share, now what?"</p>
-          <p>Each page covers one technique or service and has:</p>
+          <p>Keep two complementary sets of notes while studying: <strong>module notes</strong> (following the course) and a <strong>methodology</strong> (your personal testing playbook organized by <em>what you encounter</em>, not which module taught it). Mid-exam, it answers questions like &ldquo;I found a file upload endpoint or GraphQL API &mdash; what do I test next?&rdquo;</p>
+          <p>Each methodology page should include:</p>
           <ul>
-            <li>A short explanation of when to use it.</li>
-            <li>A table of the commands, with what each one does.</li>
-            <li>What to look for in the output, plus the next step.</li>
+            <li>When to apply the technique and what indicators to look for.</li>
+            <li>Copy-ready commands, wordlists, and payloads with short notes.</li>
+            <li>Filter bypasses, edge cases, and next steps if it hits.</li>
           </ul>
-          <p>For example, a page called <code>SMB</code> might list how to find shares, connect to them, and what to try if anonymous login works. Build it as you study: when you finish a module, copy the commands that worked from your notes into the right page. Most HTB Academy modules also have a <strong>Cheat Sheet</strong> button above the table of contents, a PDF of the module's commands, which helps when you write your notes. By exam day, any technique should be one lookup away. It works for any cert, and it's worth starting with your very first module. The prep notes leave their Methodology section blank for this reason, so you can build it your own way.</p>
-          <p>If you use Obsidian, <a href="https://github.com/blue-pho3nix/pentesting_templates_obsidian">blue-pho3nix/pentesting_templates_obsidian</a> is a good template to start from. It's a set of Obsidian templates organized the same way, by phase and then one page per service or technique (it even has an SMB page). Its README walks you through setup: copy the templates into your vault, turn on the free Templater community plugin, and insert a template with <code>Alt+E</code>. It was built for CPTS and OSCP prep, so treat it as a structure to copy and fill with the commands you learn in your own path.</p>
+          <p>Most HTB Academy modules also include a <strong>Cheat Sheet</strong> button above the table of contents. After finishing each module, distill the working payloads into your methodology phases so any attack class is one search away on exam day.</p>
         </div>
       </details>
 
       <details>
         <summary>What is SysReptor, and why does the report matter so much?</summary>
         <div class="a">
-          <p>HTB exams aren't just about the hands-on part. Every exam ends with a professional report that HTB staff grade, and a weak report can fail you even if you got enough points.</p>
-          <p><strong>SysReptor</strong> is a reporting tool that has official templates for HTB exams. You write your findings in it and it produces a polished PDF. You can run it yourself, or use SysReptor's free cloud for HTB students, explained on their <a href="https://docs.sysreptor.com/htb-reporting-with-sysreptor">Hack The Box Reporting</a> page. If you use the cloud, export your report when you're done, because inactive accounts are deleted after three months. SysReptor also publishes a sample report for each HTB cert (here's the <a href="https://docs.sysreptor.com/assets/reports/HTB-CJCA-Report.pdf">CJCA one</a>), and every tracker links its cert's sample under Reporting &amp; Exam Prep. Read yours before you start the exam, since it shows the structure and depth HTB expects.</p>
-          <p>For a walkthrough, Cyber Ryan's <a href="https://www.youtube.com/watch?v=ItVsQmHLicc">CPTS Report Made EASY</a> video covers setting up SysReptor and using the HTB template, and dollarboysushil's <a href="https://dollarboysushil.com/posts/cpts-report-writing-guide/">report writing guide</a> shows what each section of a finished report looks like. Both use the CPTS, but the process is the same for every HTB cert.</p>
-          <p>Whatever cert you're taking, do the <a href="https://academy.hackthebox.com/course/preview/documentation--reporting">Documentation &amp; Reporting</a> module from the Penetration Tester path. It's already part of the CPTS path; for other certs you add it yourself. It's built around the CPTS report, so it won't match your cert's report one for one, but the note-taking habits and report tips carry over to every exam.</p>
-          <p>Practice once before exam day: pick an easy box (your cert's practice boxes start with easy ones), solve it, and write a short report about it in SysReptor. Several exam reviews in the Resources tab say the same thing: start writing during the exam, not on the last night.</p>
+          <p>Passing CWES isn&rsquo;t only about capturing flags. HTB staff manually grade your commercial-grade penetration testing report, and an incomplete or unclear report can fail you even with enough flags.</p>
+          <p><strong>SysReptor</strong> ships an official HTB CWES template that formats findings, evidence, and remediation into a clean PDF. You can self-host it or use SysReptor&rsquo;s free cloud for HTB students (<a href="https://docs.sysreptor.com/htb-reporting-with-sysreptor" target="_blank" rel="noopener">Hack The Box Reporting docs</a> &mdash; export your report when done, as inactive cloud accounts are purged after three months). Read the <a href="https://docs.sysreptor.com/assets/reports/HTB-CWES-Report.pdf" target="_blank" rel="noopener">official HTB CWES sample report</a> before exam week to see the exact depth HTB expects.</p>
+          <p>For reporting fundamentals, Cyber Ryan&rsquo;s <a href="https://www.youtube.com/watch?v=ItVsQmHLicc" target="_blank" rel="noopener">Report Made EASY</a> video walks through SysReptor setup, and HTB&rsquo;s <a href="https://academy.hackthebox.com/course/preview/documentation--reporting" target="_blank" rel="noopener">Documentation &amp; Reporting</a> module (from the Penetration Tester path) is widely recommended by CWES passers even though it isn&rsquo;t required to unlock the exam.</p>
+          <p>Practice once before exam day: solve an easy practice box and write a mock report for it in SysReptor. During the exam, document every confirmed finding as soon as you get it rather than waiting until day seven.</p>
         </div>
       </details>
     </section>
-
-    <footer>Independent study aids, not affiliated with or endorsed by Hack The Box · <a href="../">All trackers</a> · <a href="https://github.com/cnmoseman/htb-study-trackers/issues/new?template=suggest-resource.yml&amp;cert=Not+cert-specific&amp;where=Not+sure&amp;title=%5BResource%5D+">Suggest a resource</a> · <a href="https://github.com/cnmoseman/htb-study-trackers/issues/new?template=report-problem.yml&amp;cert=Not+cert-specific&amp;where=FAQ&amp;title=%5BProblem%5D+">Report a problem</a></footer>
   </main>
+
+  <footer>
+    <div class="wrap foot-in">
+      <span>Independent study aid, not affiliated with or endorsed by Hack The Box</span>
+      <div class="foot-links">
+        <a href="../">CWES hub</a>
+        <a href="../cwes/tracker/">Tracker</a>
+        <a href="https://github.com/nithin0x/htb-study-trackers/issues/new?template=suggest-resource.yml&amp;where=Not+sure&amp;title=%5BResource%5D+%5BCWES%5D+">Suggest a resource</a>
+        <a href="https://github.com/nithin0x/htb-study-trackers/issues/new?template=report-problem.yml&amp;where=FAQ&amp;title=%5BProblem%5D+%5BCWES%5D+">Report a problem</a>
+      </div>
+    </div>
+  </footer>
+
 <script>
-  const secs=[...document.querySelectorAll("main section")], tabs=[...document.querySelectorAll(".tabs button")], q=document.getElementById("q"), none=document.getElementById("none");
-  let cur="all";
-  function apply(){
-    const t=q.value.trim().toLowerCase(); let shown=0;
-    secs.forEach(s=>{
-      let any=0;
-      s.querySelectorAll("details").forEach(d=>{
-        const hit=!t||d.textContent.toLowerCase().includes(t);
-        d.hidden=!hit; if(hit) any++;
-        if(t.length>2) d.open=hit;
+  (function(){
+    var menuBtn = document.getElementById("menuBtn");
+    var mobileMenu = document.getElementById("mobileMenu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.onclick = function () {
+        var open = mobileMenu.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(open));
+      };
+    }
+    const secs=[...document.querySelectorAll("main section")], tabs=[...document.querySelectorAll(".tabs button")], q=document.getElementById("q"), none=document.getElementById("none");
+    let cur="all";
+    function apply(){
+      const t=q.value.trim().toLowerCase(); let shown=0;
+      secs.forEach(s=>{
+        let any=0;
+        s.querySelectorAll("details").forEach(d=>{
+          const hit=!t||d.textContent.toLowerCase().includes(t);
+          d.hidden=!hit; if(hit) any++;
+          if(t.length>2) d.open=hit;
+        });
+        s.hidden=!((cur==="all"||s.id===cur)&&any); if(!s.hidden) shown++;
       });
-      s.hidden=!((cur==="all"||s.id===cur)&&any); if(!s.hidden) shown++;
-    });
-    none.hidden=shown>0;
-  }
-  tabs.forEach(b=>b.onclick=()=>{tabs.forEach(x=>x.classList.toggle("on",x===b));cur=b.dataset.s;apply();});
-  q.oninput=apply;
-  /* #id link: open that question */
-  function go(){
-    const hd=location.hash&&document.getElementById(location.hash.slice(1));
-    if(!hd||hd.tagName!=="DETAILS")return;
-    if(hd.closest("[hidden]")||hd.hidden){q.value="";tabs[0].click();}  /* show all so it's visible */
-    hd.open=true;hd.scrollIntoView();
-  }
-  go();addEventListener("hashchange",go);
-  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",()=>{if(a.hash===location.hash)go();}));  /* same hash: no hashchange */
+      none.hidden=shown>0;
+    }
+    tabs.forEach(b=>b.onclick=()=>{tabs.forEach(x=>x.classList.toggle("on",x===b));cur=b.dataset.s;apply();});
+    q.oninput=apply;
+    function go(){
+      const hd=location.hash&&document.getElementById(location.hash.slice(1));
+      if(!hd||hd.tagName!=="DETAILS")return;
+      if(hd.closest("[hidden]")||hd.hidden){q.value="";tabs[0].click();}
+      hd.open=true;hd.scrollIntoView();
+    }
+    go();addEventListener("hashchange",go);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",()=>{if(a.hash===location.hash)go();}));
+  })();
 </script>
 </body>
 </html>
